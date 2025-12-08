@@ -1,17 +1,17 @@
 # Data Template
 Sposób na przechowanie danych w XAML. Alternatywa dla klasycznego przypisania. 
 ## Kod
-### Podstawowy kod (z bindingiem):
+### Podstawowy kod (z bindingiem)
 ```xml
 <DataTemplate>
-    <TextBlock Text="{Binding Name}" />
+    <TextBlock Text="{Binding Name}" /> <!-- Struktura DataTemplate (można to znacznie bardziej rozbudować)-->
 </DataTemplate>
 ```
-### Przykład z ListBox:
+### Przykład z ListBox
 ```xml
 <ListBox Width="400" Margin="10"
          ItemsSource="{Binding Source={StaticResource myTodoList}}"> <!--  <Window.Resources>    <local:Tasks x:Key="myTodoList"/> </Window.Resources> dzięki temu możemy pobrać dane z .cs-->
-   <ListBox.ItemTemplate> <!--Dzieki temu możemy jako źródło dać cały DataTemplate-->
+   <ListBox.ItemTemplate> <!--Dzieki temu możemy jako źródło dać cały DataTemplate i modyfikować wyglądem ListBoxa-->
      <DataTemplate>
        <StackPanel>
          <TextBlock Text="{Binding Path=TaskName}" />
@@ -22,7 +22,7 @@ Sposób na przechowanie danych w XAML. Alternatywa dla klasycznego przypisania.
    </ListBox.ItemTemplate>
  </ListBox>
 ```
-### Przykład z Window.Resource:
+### Przykład z Window.Resource
 ```xml
 <Window.Resources>
 <DataTemplate x:Key="myTaskTemplate"> <!-- x:Key konieczne by połączyć z ListBox ItemTemplate -->
@@ -35,10 +35,10 @@ Sposób na przechowanie danych w XAML. Alternatywa dla klasycznego przypisania.
 </Window.Resources>
 <!--Później w kodzie z np. ListBox-->
 <ListBox Width="400" Margin="10"
-         ItemsSource="{Binding Source={StaticResource myTodoList}}"
-         ItemTemplate="{StaticResource myTaskTemplate}"/>
+         ItemsSource="{Binding Source={StaticResource myTodoList}}" 
+         ItemTemplate="{StaticResource myTaskTemplate}"/> <!--Pobiera templatke z Window.Resource i myTodoList z kodu C# jak w przykłądzie pow.>
 ```
-### Zamiast x:Key można też dać:
+### Zamiast x:Key można też dać
 ```xml
 <DataTemplate DataType="{x:Type local:Task}"> <!--X:Type local:nazwa_modelu w tym przypadku Task -->
   <StackPanel>
@@ -48,9 +48,9 @@ Sposób na przechowanie danych w XAML. Alternatywa dla klasycznego przypisania.
   </StackPanel>
 </DataTemplate>
 ```
-### Przykład z customowym DataTemplate:
+### Przykład z customowym DataTemplate
 ```xml
-<DataTemplate x:Key="myTaskTemplate">
+<DataTemplate x:Key="myTaskTemplate"> <!--Bardziej rozbudowany DataTemplate który zmienia wygląd ListBoxa-->
   <Border Name="border" BorderBrush="Aqua" BorderThickness="1"
           Padding="5" Margin="5">
     <Grid>
@@ -78,7 +78,7 @@ Sposób na przechowanie danych w XAML. Alternatywa dla klasycznego przypisania.
      ItemTemplate="{StaticResource myTaskTemplate}" 
      HorizontalContentAlignment="Stretch"/>
 ```
-### Data Triggery w DataTemplate:
+### Data Triggery w DataTemplate
 ```xml
 <DataTemplate x:Key="myTaskTemplate">
 <DataTemplate.Triggers> <!--Implementuje trigger-->
@@ -138,7 +138,7 @@ ControlTemplate w WPF określa jak wygląda kontrolka od środka, czyli jej wizu
 Pozwala całkowicie zmienić wygląd kontrolki, bez zmiany jej zachowania i logiki.
 Używa się go do tworzenia własnych skórek i stylów kontrolek.
 ## Kod
-### Podstawowa struktura ControlTemplate:
+### Podstawowa struktura ControlTemplate
 ```xml
 <Style TargetType="Button"> 
   <Setter Property="OverridesDefaultStyle" Value="True"/>
@@ -155,7 +155,7 @@ Używa się go do tworzenia własnych skórek i stylów kontrolek.
   </Setter>
 </Style>
 ```
-### Atrybuty które można zmienić w ControlTemplate:
+### Atrybuty które można zmienić w ControlTemplate
 ```xml
   <Setter Property="SnapsToDevicePixels"
           Value="true" /> <!--Cały rozmiar ekranu -->
@@ -199,14 +199,14 @@ MainWindow.xaml
       </ListBox.ItemsPanel>
 
       <ListBox.ItemTemplate> 
-        <DataTemplate> 
+        <DataTemplate>
           <Button Content="{Binding PageTitle}" 
                   Command="{Binding NavigateCommand}" 
-                  CommandParameter="{Binding PageIndex}" />
+                  CommandParameter="{Binding PageIndex}" /> <!--Argument do Command-->
         </DataTemplate> 
       </ListBox.ItemTemplate> 
     </ListBox>
-    <ContentControl Content="{Binding SelectedPage}" />
+    <ContentControl Content="{Binding SelectedPage}" /> 
   <StackPanel>
 </Window>
 
@@ -219,9 +219,9 @@ class MainViewModel
   public ObservableCollection<NavigationItem> NavigationItems { get; }   
   private Dictionary<int, IPage> Pages { get; }
 
-  private IPage selectedPage;   
-  public IPage SelectedPage
-  {
+  private IPage selectedPage; //Wybrana strona
+  public IPage SelectedPage //zmiana zawartości SelectedPage w zaleznosci od stanu
+  { 
     get => this.selectedPage;
     set 
     { 
@@ -232,7 +232,7 @@ class MainViewModel
 
   public MainViewModel()
   {
-    this.NavigationItems = new ObservableCollection<NavigationItem> //ilosc stron
+    this.NavigationItems = new ObservableCollection<NavigationItem> //ilosc stron i nawigacja z komendami
     {
       new NavigationItem("Home", 0, this.SelectPageCommand),
       new NavigationItem("Login", 1, this.SelectPageCommand)
@@ -242,7 +242,7 @@ class MainViewModel
     {
       { 0, new WelcomePageViewModel() },
       { 1, new LoginPageViewModel() }
-    };
+    }; //Dodanie stron do odczytu
 
     this.SelectedPage = this.Pages.First().Value; 
   }
@@ -250,7 +250,7 @@ class MainViewModel
   public void SelectPage(object param) //do wyboru strony
   {
     if (param is int pageIndex 
-      && this.Pages.TryGetValue(pageIndex, out IPage selectedPage))
+      && this.Pages.TryGetValue(pageIndex, out IPage selectedPage)) //sprawdzanie czy istnieje dana strona w słowniku(dictionary)
     {
       this.SelectedPage = selectedPage;
     }
@@ -258,12 +258,12 @@ class MainViewModel
 
   public void AddPage() //dodaje nową stronę
   {
-    int newPageIndex = this.Pages.Count;
+    int newPageIndex = this.Pages.Count; 
 
-    IPage calculatorPageModel = new CalculatotPageViewModel();
+    IPage calculatorPageModel = new CalculatotPageViewModel(); //utworzenie nowej strony (tam gdzie jest new podać własną klasę np. MainViewModel)
     this.Pages.Add(newPageIndex, calculatorPageModel);
 
-    var navigationItem = new NavigationItem("Calculator", newPageIndex, this.SelectPageCommand);
+    var navigationItem = new NavigationItem("Calculator", newPageIndex, this.SelectPageCommand); //dodanie w celu nawigacji miedzy elem.
     this.NavigationItems.Add(navigationItem);
   }
 
