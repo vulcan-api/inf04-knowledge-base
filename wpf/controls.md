@@ -16,10 +16,10 @@ Służy do wprowadzania i edycji niesformatowanego tekstu przez użytkownika. Po
 ```
 
 ### Właściwości
-- **Name** - chyba wiadomo
-- **TextWrapping="Wrap"** - zawija linie tekstu, jak się nie mieści zawija do nowego wiersza i automatycznie rozszerza TextBoxa, żeby uwzględnić miejsce dla nowego wiersza
-- **AcceptsReturn="True"** - powoduje, że po wciśnięciu RETURN (enter) zostanie wstawiony nowy wiersz, automatycznie rozszerza
-- **VerticalScrollBarVisibility="Visible"** - dodaje pasek przewijania do TextBox, jeśli TextBox rozszerza się poza rozmiar ramy lub okna, który go otacza
+- `Name` - chyba wiadomo
+- `TextWrapping="Wrap"` - zawija linie tekstu, jak się nie mieści zawija do nowego wiersza i automatycznie rozszerza TextBoxa, żeby uwzględnić miejsce dla nowego wiersza
+- `AcceptsReturn="True"` - powoduje, że po wciśnięciu RETURN (enter) zostanie wstawiony nowy wiersz, automatycznie rozszerza
+- `VerticalScrollBarVisibility="Visible"` - dodaje pasek przewijania do TextBox, jeśli TextBox rozszerza się poza rozmiar ramy lub okna, który go otacza
 
 ---
 
@@ -38,11 +38,11 @@ Służy do wyświetlania tekstu na ekranie. Jest lżejszy od TextBoxa (zużywa m
 ```
 
 ### Właściwości
-- **Text** - Treść wyświetlana w kontrolce.
-- **TextWrapping="Wrap"** - Zawija tekst do nowej linii, jeśli nie mieści się w szerokości kontrolki.
-- **TextTrimming="CharacterEllipsis"** - Jeśli tekst się nie mieści, ucina go i dodaje trzy kropki (...) na końcu.
-- **Foreground="Blue"** - Kolor czcionki.
-- **FontSize="14"** - Rozmiar czcionki w pikselach (device independent pixels).
+- `Text` - Treść wyświetlana w kontrolce.
+- `TextWrapping="Wrap"` - Zawija tekst do nowej linii, jeśli nie mieści się w szerokości kontrolki.
+- `TextTrimming="CharacterEllipsis"` - Jeśli tekst się nie mieści, ucina go i dodaje trzy kropki (...) na końcu.
+- `Foreground="Blue"` - Kolor czcionki.
+- `FontSize="14"` - Rozmiar czcionki w pikselach (device independent pixels).
 
 ---
 
@@ -60,10 +60,10 @@ Przycisk po prostu c:
 ```
 
 ### Właściwości
-- **Content** - Zawartość przycisku (może to być tekst, ale też np. obrazek lub inna kontrolka).
-- **Click="Button_Click"** - Nazwa metody w kodzie C# (event handler), która wykona się po kliknięciu.
-- **IsDefault="True"** - Sprawia, że wciśnięcie klawisza ENTER na klawiaturze automatycznie klika ten przycisk (np. w formularzach logowania).
-- **IsEnabled="False"** - Wyłącza przycisk (jest wyszarzony i nie można go kliknąć).
+- `Content` - Zawartość przycisku (może to być tekst, ale też np. obrazek lub inna kontrolka).
+- `Click="Button_Click"` - Nazwa metody w kodzie C# (event handler), która wykona się po kliknięciu.
+- `IsDefault="True"` - Sprawia, że wciśnięcie klawisza ENTER na klawiaturze automatycznie klika ten przycisk (np. w formularzach logowania).
+- `IsEnabled="False"` - Wyłącza przycisk (jest wyszarzony i nie można go kliknąć).
 
 ### Obsługa zdarzenia w C#
 Potem w .xaml.cs (metoda)
@@ -88,8 +88,8 @@ Pozwala użytkownikowi wybrać opcję typu "Tak/Nie" (True/False). Można zaznac
 ```
 
 ### Właściwości
-- **Content** - Tekst wyświetlany obok kwadracika.
-- **IsChecked="True"** - Określa stan zaznaczenia (True = zaznaczony, False = odznaczony).
+- `Content` - Tekst wyświetlany obok kwadracika.
+- `IsChecked="True"` - Określa stan zaznaczenia (True = zaznaczony, False = odznaczony).
 
 ---
 
@@ -105,9 +105,9 @@ Służy do wyboru **tylko jednej** opcji z grupy. Zaznaczenie jednego elementu a
 ```
 
 ### Właściwości
-- **GroupName="Plec"** - Kluczowa właściwość. Wszystkie RadioButtony o tej samej nazwie grupy działają razem (tylko jeden może być wybrany).
-- **IsChecked="True"** - Domyślnie zaznacza tę opcję przy uruchomieniu programu.
-- **Content** - Tekst opcji.
+- `GroupName="Plec"` - Kluczowa właściwość. Wszystkie RadioButtony o tej samej nazwie grupy działają razem (tylko jeden może być wybrany).
+- `IsChecked="True"` - Domyślnie zaznacza tę opcję przy uruchomieniu programu.
+- `Content` - Tekst opcji.
 
 ---
 
@@ -127,9 +127,9 @@ Rozwijana lista wyboru. Pozwala użytkownikowi wybrać jedną wartość z listy,
 ```
 
 ### Właściwości
-- **IsEditable="True"** - Pozwala użytkownikowi wpisać własną wartość, której nie ma na liście (działa trochę jak TextBox połączony z listą).
-- **SelectedIndex="0"** - Ustawia domyślnie wybrany element (0 to pierwszy element listy).
-- **ComboBoxItem** - Pojedynczy element wewnątrz listy rozwijanej.
+- `IsEditable="True"` - Pozwala użytkownikowi wpisać własną wartość, której nie ma na liście (działa trochę jak TextBox połączony z listą).
+- `SelectedIndex="0"` - Ustawia domyślnie wybrany element (0 to pierwszy element listy).
+- `ComboBoxItem` - Pojedynczy element wewnątrz listy rozwijanej.
 
 ---
 
@@ -148,8 +148,8 @@ Wyświetla listę elementów w pionie. W przeciwieństwie do ComboBoxa, lista je
 ```
 
 ### Właściwości
-- **SelectionMode="Multiple"** - Pozwala użytkownikowi zaznaczyć więcej niż jeden element (np. trzymając Ctrl). Domyślnie jest "Single" (do zaznaczenia tylko jeden element).
-- **Height="100"** - Ustala sztywną wysokość listy (jeśli elementów jest więcej, pojawi się pasek przewijania).
+- `SelectionMode="Multiple"` - Pozwala użytkownikowi zaznaczyć więcej niż jeden element (np. trzymając Ctrl). Domyślnie jest "Single" (do zaznaczenia tylko jeden element).
+- `Height="100"` - Ustala sztywną wysokość listy (jeśli elementów jest więcej, pojawi się pasek przewijania).
 
 ---
 
@@ -169,10 +169,10 @@ Bardziej zaawansowana lista, zoptymalizowana do wyświetlania danych w kolumnach
 ```
 
 ### Właściwości
-- **ItemsSource="{Binding Users}"** - Źródło danych (lista obiektów w kodzie C#, którą wyświetlamy).
-- **GridView** - Tryb widoku, który pozwala na definiowanie kolumn.
-- **GridViewColumn Header="..."** - Definiuje nagłówek kolumny.
-- **DisplayMemberBinding** - Wskazuje, którą właściwość obiektu (np. Name) wyświetlić w tej kolumnie.
+- `ItemsSource="{Binding Users}"` - Źródło danych (lista obiektów w kodzie C#, którą wyświetlamy).
+- `GridView` - Tryb widoku, który pozwala na definiowanie kolumn.
+- `GridViewColumn Header="..."` - Definiuje nagłówek kolumny.
+- `DisplayMemberBinding` - Wskazuje, którą właściwość obiektu (np. Name) wyświetlić w tej kolumnie.
 
 ---
 
@@ -196,12 +196,12 @@ Potężna tabela do wyświetlania i edycji dużych zbiorów danych. Przypomina E
 ```
 
 ### Właściwości
-- **ItemsSource="{Binding UsersList}"** - Źródło danych (lista obiektów C#).
-- **AutoGenerateColumns="False"** - Kluczowe! "False" oznacza, że sami decydujemy jakie kolumny wyświetlić (jak w kodzie wyżej). "True" wrzuciłoby wszystko jak leci.
-- **CanUserAddRows="False"** - Usuwa pusty wiersz na dole tabeli (użytkownik nie może dodawać nowych rekordów wpisując w puste pole).
-- **AlternatingRowBackground="LightGray"** - Co drugi wiersz ma szare tło (tzw. zebra), poprawia czytelność.
-- **DataGridTextColumn / CheckBoxColumn** - Typy kolumn. "Header" to nagłówek, "Binding" to dane z obiektu.
-- **Width="*"** - Kolumna rozciąga się, zajmując całe pozostałe wolne miejsce.
+- `ItemsSource="{Binding UsersList}"` - Źródło danych (lista obiektów C#).
+- `AutoGenerateColumns="False"` - Kluczowe! "False" oznacza, że sami decydujemy jakie kolumny wyświetlić (jak w kodzie wyżej). "True" wrzuciłoby wszystko jak leci.
+- `CanUserAddRows="False"` - Usuwa pusty wiersz na dole tabeli (użytkownik nie może dodawać nowych rekordów wpisując w puste pole).
+- `AlternatingRowBackground="LightGray"` - Co drugi wiersz ma szare tło (tzw. zebra), poprawia czytelność.
+- `DataGridTextColumn / CheckBoxColumn` - Typy kolumn. "Header" to nagłówek, "Binding" to dane z obiektu.
+- `Width="*"` - Kolumna rozciąga się, zajmując całe pozostałe wolne miejsce.
 
 ---
 
@@ -218,8 +218,8 @@ Kontener układu, który "przykleja" (dokuje) elementy potomne do krawędzi: Gó
 ```
 
 ### Właściwości
-- **LastChildFill="True"** - Ostatni element w kodzie (tutaj TextBox) automatycznie rozciągnie się na całą pozostałą wolną przestrzeń pośrodku, ewentualnie można ustawić false.
-- **DockPanel.Dock="Top"** - Właściwość doczepiana (Attached Property), mówi rodzicowi, do której krawędzi przykleić ten konkretny element.
+- `LastChildFill="True"` - Ostatni element w kodzie (tutaj TextBox) automatycznie rozciągnie się na całą pozostałą wolną przestrzeń pośrodku, ewentualnie można ustawić false.
+- `DockPanel.Dock="Top"` - Właściwość doczepiana (Attached Property), mówi rodzicowi, do której krawędzi przykleić ten konkretny element.
 
 ---
 
@@ -236,5 +236,5 @@ Kontener, który układa elementy jeden obok drugiego (domyślnie poziomo). Gdy 
 ```
 
 ### Właściwości
-- **Orientation="Horizontal"** - Elementy układają się od lewej do prawej (domyślne). "Vertical" układałoby w kolumnach z góry na dół.
-- **ItemWidth="100"** - Wymusza stałą szerokość dla wszystkich elementów wewnątrz panelu (opcjonalne).
+- `Orientation="Horizontal"` - Elementy układają się od lewej do prawej (domyślne). "Vertical" układałoby w kolumnach z góry na dół.
+- `ItemWidth="100"` - Wymusza stałą szerokość dla wszystkich elementów wewnątrz panelu (opcjonalne).
