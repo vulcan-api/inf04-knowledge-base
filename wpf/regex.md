@@ -48,6 +48,8 @@ private void Save_Click(object sender, RoutedEventArgs e) => MessageBox.Show("Sa
 
 ## Menu (górne)
 
+Stały pasek poleceń u góry okna. Zawiera główne funkcje aplikacji, zawsze widoczne i dostępne zwykłym kliknięciem.
+
 ```xml
 <Menu DockPanel.Dock="Top">
   <MenuItem Header="_File">
@@ -57,7 +59,15 @@ private void Save_Click(object sender, RoutedEventArgs e) => MessageBox.Show("Sa
 </Menu>
 ```
 
+```cs
+private void Open_Click(object sender, RoutedEventArgs e) => MessageBox.Show("Open clicked");
+private void Exit_Click(object sender, RoutedEventArgs e) => MessageBox.Show("Exit clicked");
+```
+
+
 ## ContextMenu (podręczne)
+
+Menu wywoływane dopiero po kliknięciu PPM. Pojawia się dokładnie przy elemencie, oferując akcje związane z tym konkretnym miejscem.
 
 ```xml
 <Button Content="Right Click Me">
@@ -95,14 +105,21 @@ Kontrolka do wyświetlania hierarchicznych danych, węzły mogą mieć dzieci, m
 ```
 
 ### Dynamiczne dodawanie w C#
+```xml
+<Button Content="Add Node" Click="AddDynamic_Click"/>
+```
 
 ```cs
-myTree.Items.Add(new TreeViewItem { Header = "New Node" });
+private void AddDynamic_Click(object sender, RoutedEventArgs e)
+{
+    myTree.Items.Add(new TreeViewItem { Header = "New Node" });
+}
 ```
 
 ### TreeView z ContextMenu
 
 ```xml
+// opcje pojawiają się po kliknięciu PPM
 <TreeView x:Name="treeWithMenu">
   <TreeView.ContextMenu>
     <ContextMenu>
