@@ -4,4 +4,4 @@
 
 
 ## Tutorial jak wprowadzać zmiany:
-tu będzie tutorial (TODO)
+(film dodany)
