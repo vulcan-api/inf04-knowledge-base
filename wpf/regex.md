@@ -23,11 +23,11 @@ W logice C# wpisujemy wzór dla tekstu i za pomocą if i w środku funkcję Rege
 | `()`          | grupowanie wzorów lub wyciąganie fragmentów |
 | `(?:)`        | grupa bez zapisywania dopasowania           |
 | `(?<name>)`   | nazwana grupa                               |
-| `\|`           | alternatywa („lub”)                         |
+| `\|`          | alternatywa („lub”)                         |
 | `\`           | ucieczka metaznaków                         |
 | `\d`          | cyfra 0–9                                   |
 | `\D`          | nie-cyfra                                   |
-| `\w`          | litera/cyfra/_                              |
+| `\w`          | słowo (litery/cyfry/_)                      |
 | `\W`          | nie-`\w`                                    |
 | `\s`          | biały znak (spacja, tab, enter)             |
 | `\S`          | nie-`\s`                                    |
@@ -106,9 +106,9 @@ W WPF mamy dwa główne rodzaje menu:
 
 ## Menu (górne)
 
-Używa się kontrolki <Menu> i <MenuItem>.
-<Menu> to kontener dla wszystkich pozycji menu.
-<MenuItem> to pojedyncza pozycja lub podmenu.
+Używa się kontrolki Menu i MenuItem.
+Menu to kontener dla wszystkich pozycji menu.
+MenuItem to pojedyncza pozycja lub podmenu.
 Atrybut Header ustawia tekst widoczny w menu.
 _ w Header (_File) tworzy skrót klawiszowy Alt+F.
 Atrybut Click="Open_Click" mówi: „Open clicked”.
@@ -135,8 +135,8 @@ Kliknięcie wywołuje metodę w C#.
 
 Wywoływane tylko po kliknięciu prawym przyciskiem myszy.
 Pojawia się dokładnie przy elemencie, do którego jest przypisane.
-Tworzy się poprzez <Element.ContextMenu> i <ContextMenu> wewnątrz niego.
-<MenuItem> działa tak samo jak w górnym menu – Click wywołuje metodę w C#.
+Tworzy się poprzez Element.ContextMenu i ContextMenu wewnątrz niego.
+MenuItem działa tak samo jak w górnym menu – Click wywołuje metodę w C#.
 
 ```xml
 <Button Content="Right Click Me">
