@@ -30,9 +30,11 @@ Hook należy zaimportować. Następnie wywołujemy go wewnątrz komponentu ([prz
 Hook przyjmuje dwie argumenty:
 
 - funkcję, która będzie wywoływana po renderowaniu komponentu (handleKeyPress)
-- tablicę zmiennych, które będą monitorowane (pusta tablica)
+- tablicę zmiennych, które będą monitorowane (w naszym przypadku, pusta tablica)
 
 Jeśli tablica jest pusta, hook będzie wywoływany tylko raz, po pierwszym renderowaniu komponentu.
+
+Jeśli nie podamy tablicy, hook będzie wywoływany po każdym renderowaniu komponentu.
 
 ## Opis hooka
 
