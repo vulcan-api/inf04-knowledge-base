@@ -23,7 +23,7 @@ W logice C# wpisujemy wzór dla tekstu i za pomocą if i w środku funkcję Rege
 | `()`          | grupowanie wzorów lub wyciąganie fragmentów |
 | `(?:)`        | grupa bez zapisywania dopasowania           |
 | `(?<name>)`   | nazwana grupa                               |
-| `|`           | alternatywa („lub”)                         |
+| `\|`           | alternatywa („lub”)                         |
 | `\`           | ucieczka metaznaków                         |
 | `\d`          | cyfra 0–9                                   |
 | `\D`          | nie-cyfra                                   |
