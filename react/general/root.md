@@ -26,7 +26,7 @@ function Greeting(props) {
 
 ### Teraz pora na omówienie
 
-Na początku mamy listę elementów. Może być to również lista w useState.
+Na początku mamy listę elementów. Może być to również lista w `useState`.
 
 ```jsx
 const lista = ["Kurs1", "Kurs2", "Kurs3"];
