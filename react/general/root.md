@@ -155,7 +155,7 @@ function Greeting(props) {
 
 ### Omówienie go
 
-Event handlery to funkcje, które są wywoływane po zrobieniu czegoś z elementem. W naszym przypadku, funkcja handleClick jest wywoływana po kliknięciu na button. Mamy różne event handlery, np. onClick, onSubmit, onChange, onInput, onKeydown, onKeyup itd.
+Event handlery to funkcje, które są wywoływane po zrobieniu czegoś z elementem. W naszym przypadku, funkcja `handleClick` jest wywoływana po kliknięciu na przycisk. Mamy różne event handlery, np. `onClick`, `onSubmit`, `onChange`, `onInput`, `onKeydown`, `onKeyup` itd.
 
 Docsy onClicka -> [Kliknij](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event)
 
