@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="INF04AGD_M.MainPage">
+    <Grid BackgroundColor="LightBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label HorizontalOptions="Center" Text="Urządzenia domowe" FontSize="Large" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Margin="5"/>
+        <Label Text="Autor: 00000000000" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="Center" Margin="5"/>
+
+        <Image Source="pralka.jpg"  HeightRequest="150" Grid.Column="0" Grid.Row="2" Grid.RowSpan="3"/>
+        <Label Text="Pralka" FontSize="Large" Grid.Row="2" Grid.Column="1"/>
+        <Entry x:Name="entryPralka" PlaceholderColor="Navy" Placeholder="Podaj nr prania 1..12"  BackgroundColor="SkyBlue" Grid.Row="3" Grid.Column="1"/>
+        <Button x:Name="btnZatwierdz" Text="Zatwierdź" Clicked="btnZatwierdz_Clicked"  CornerRadius="5" BackgroundColor="RoyalBlue" Grid.Row="4" Grid.Column="1" Margin="10"/>
+        <Label x:Name="lblWynikP" Grid.Row="5" Grid.Column="1"/>
+
+        <Image Source="odkurzacz.jpg" HeightRequest="150" Grid.Column="0" Grid.Row="5" Grid.RowSpan="4"/>
+        <Label Text="Odkurzacz" FontSize="Large" Grid.Row="6" Grid.Column="1"/>
+        <Button x:Name="btnWlacz"  Text="Wlacz" Grid.Row="7" Grid.Column="1" Clicked="btnWlacz_Clicked" CornerRadius="5" BackgroundColor="RoyalBlue" Margin="10"/>
+        <Label x:Name="lblWynikO" Grid.Row="8" Grid.Column="1"/>
+
+    </Grid>
+
+</ContentPage>

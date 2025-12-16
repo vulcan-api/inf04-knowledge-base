@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="INF04GamblingM.MainPage">
+
+    <StackLayout BackgroundColor="Beige">
+        <Label Text="Gra w kości. Autor: Geralt z Rivii" FontSize="Large" TextColor="White" BackgroundColor="Maroon"/>
+        <Button x:Name="btnRandomize" Clicked="btnRandomize_Clicked" CornerRadius="5" Text="Rzuć kośćmi" BackgroundColor="Chocolate" HorizontalOptions="Center"/>
+        <StackLayout Orientation="Horizontal">
+        <Image x:Name="img1" Source="question.png" />
+        <Image x:Name="img2" Source="question.png" />
+        <Image x:Name="img3" Source="question.png" />
+        <Image x:Name="img4" Source="question.png" />
+        <Image x:Name="img5" Source="question.png" />
+        </StackLayout>
+        <Label x:Name="lblCurrent" Text="Wynik tego losowania: " HorizontalOptions="Center"/>
+        <Label x:Name="lblTotal" Text="Wynik gry: " HorizontalOptions="Center"/>
+        <Button x:Name="btnReset" Text="Resetuj wynik" Clicked="btnReset_Clicked" CornerRadius="5" BackgroundColor="Chocolate" HorizontalOptions="Center"/>
+    </StackLayout>
+    
+
+</ContentPage>

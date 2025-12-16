@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="INF04CzcionkaM.MainPage">
+
+
+    <VerticalStackLayout Margin="20">
+        <Label Text="Wlasciwosci czcionki" TextColor="White" BackgroundColor="#558B2F" FontSize="Large" FontAttributes="Bold" Margin="20"></Label>
+        <Label Text="Rozmiar" FontSize="Medium" Margin="20"></Label>
+        <Slider x:Name="sliderSize" Minimum="0" Maximum="40" Margin="20"></Slider>
+        <Label Text="" x:Name="lblDemo" Margin="20"></Label>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Text=">>" FontAttributes="Bold" x:Name="btnProceed" Clicked="btnProceed_Clicked" BackgroundColor="#558B2F" TextColor="White"></Button>
+        </Grid>
+        
+    </VerticalStackLayout>
+
+
+</ContentPage>

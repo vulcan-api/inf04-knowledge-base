@@ -1,0 +1,53 @@
+﻿<Window x:Class="INF04PracownikD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:INF04PracownikD"
+        mc:Ignorable="d"
+        Title="Dodaj pracownika" Height="450" Width="800" Background="LightSteelBlue" Padding="30pt">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Grid.Column="0" Grid.Row="1" Margin="15" Grid.RowSpan="5">
+            <GroupBox.Header>
+                <Label>Dodaj pracownka</Label>
+            </GroupBox.Header>
+        </GroupBox>
+        <Label Grid.Row="2" Grid.Column="0" Content="Imie" Margin="20,10,310,17"/>
+        <TextBox x:Name="txtName" Grid.Row="2" Grid.Column="0" Margin="95,10,29,17"/>
+        <Label Grid.Row="3" Grid.Column="0" Content="Nazwisko" Margin="20,13,87,18"/>
+        <TextBox x:Name="txtLname" Grid.Row="3" Grid.Column="0" Margin="95,10,29,15"></TextBox>
+        <Label Grid.Row="4" Grid.Column="0" Content="Stanowisko" Margin="20,15,5,0"/>
+        <ComboBox x:Name="cmbRole" Grid.Row="4" Grid.Column="0" Margin="95,10,29,15">
+            <ComboBoxItem Content="Kierownik"/>
+            <ComboBoxItem Content="Starszy programista"/>
+            <ComboBoxItem Content="Mlodszy programista"/>
+            <ComboBoxItem Content="Tester"/>
+        </ComboBox>
+        <GroupBox Grid.Column="1" Margin="0,15,0,15" Grid.RowSpan="5" Grid.Row="1">
+            <GroupBox.Header>
+                <Label Content="Generowanie hasel"></Label>
+            </GroupBox.Header>
+        </GroupBox>
+        <Label Grid.Column="1" Grid.Row="2" Content="Ile znakow?" Margin="10,21,-10,10"></Label>
+        <TextBox Grid.Column="1" Grid.Row="2" x:Name="txtChar" Margin="152,21,52,10"></TextBox>
+        <CheckBox x:Name="letterFlag" Content="Male i wielkie litery" Grid.Row="3" Grid.Column="1" Margin="10,10,0,0"></CheckBox>
+        <CheckBox x:Name="numbersFlag" Content="Cyfry" Grid.Row="3" Grid.Column="1" Margin="10,41,0,41" Grid.RowSpan="2"></CheckBox>
+        <CheckBox x:Name="specialsFlag" Content="Znaki specjalne" Grid.Row="4" Grid.Column="1" Margin="10,8,-10,54" Grid.RowSpan="2"></CheckBox>
+        <Button x:Name="btnPass" Content="Generuj haslo" Grid.Row="5" Grid.Column="1" Margin="124,10,124,0" Height="21" VerticalAlignment="Top" Background="SteelBlue" Foreground="White" Click="btnPass_Click"></Button>
+        <Button x:Name="btnConfirm" Content="Zatwierdz" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Margin="218,7,218,16" Background="SteelBlue" Foreground="White" Click="btnConfirm_Click"/>
+    </Grid>
+
+</Window>
