@@ -46,7 +46,7 @@ Jak widzimy mamy podpiętą funkcję `onSubmit` do formularza. Wtedy, gdy użytk
 
 Do funkcji automatycznie trafia jeden argument - event. Następuje mistyczne `e.preventDefault()`, które uniemożliwia domyślne zachowanie formularza, czyli przeładowanie strony.
 
-Następnie tworzymy zmienną inputs, która przechowuje wszystkie inputy z formularza. Dzięki currentTarget możemy odnieść się do formularza, a dzięki elements możemy odnieść się do inputów.
+Następnie tworzymy zmienną `inputs`, która przechowuje wszystkie inputy z formularza. Dzięki `currentTarget` możemy odnieść się do formularza, a dzięki `elements` możemy odnieść się do inputów.
 
 Potem ich wartości zgarniamyt po name.value gdzie name to name podpisany jako paramentr do inputa w formularzu.
 
