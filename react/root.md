@@ -12,4 +12,6 @@ Krótkie omówienie, w miarę bez pieprzenia o niczym. Jeśli ktoś woli, będę
 - [useEffect](./hooki/useEffect.md)
 - [useRef](./hooki/useRef.md)
 
-[BONUS - rzeczy stricte pod egzamin](./general/root.md)
+[Obsługa Formularzy](./forms/root.md)
+
+[BONUS - rzeczy z jsa stricte pod egzamin](./general/root.md)
