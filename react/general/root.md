@@ -183,6 +183,6 @@ function Greeting(props) {
 }
 ```
 
-To chyba tyle, jak czegoś nie ma to dajcie znać, dopisze.
+To chyba tyle, jak czegoś nie ma to dajcie znać, dopiszę.
 
 Powrót na start -> [Start](../root.md)
