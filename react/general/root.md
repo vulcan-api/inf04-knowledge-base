@@ -126,7 +126,7 @@ lista.filter((element) => element === "Kurs1");
 
 ### Jak to działa
 
-Filter to kolejna metoda tablicy z JavaScripta. Przyjmuje ona funkcję strzałkową, która przyjmuje jeden argument - element. Następnie zajemy warunek pod jakim ma być pofiltrowany element. W naszym przypadku, jeśli element jest równy "Kurs1", to zostanie zwrócony a reszta nie zostanie zwrócona.
+Filter to kolejna metoda tablicy z JavaScripta. Przyjmuje ona funkcję strzałkową, która przyjmuje jeden argument - element. Następnie zajemy warunek pod jakim ma być pofiltrowany element. W naszym przypadku, jeśli element jest równy `Kurs1`, to zostanie zwrócony a reszta nie zostanie zwrócona.
 
 Możemy też wstawić warunek logiczny
 
