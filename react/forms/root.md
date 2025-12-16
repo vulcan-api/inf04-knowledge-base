@@ -48,7 +48,7 @@ Do funkcji automatycznie trafia jeden argument - event. Następuje mistyczne `e.
 
 Następnie tworzymy zmienną `inputs`, która przechowuje wszystkie inputy z formularza. Dzięki `currentTarget` możemy odnieść się do formularza, a dzięki `elements` możemy odnieść się do inputów.
 
-Potem ich wartości zgarniamyt po name.value gdzie name to name podpisany jako paramentr do inputa w formularzu.
+Potem ich wartości zgarniamy po `name.value` gdzie name to name podpisany jako parametr do inputa w formularzu.
 
 ```jsx
 const inputs = event.currentTarget.elements;
