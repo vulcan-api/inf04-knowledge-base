@@ -85,7 +85,7 @@ function Formularz() {
 
 ### useState
 
-Możemy sobie podpiąć state pod inputa
+Możemy sobie podpiąć state pod inputa. Pamiętajmy jednak, że po każdym wpisanym znaku nastąpi re-render komponentu. Aby nie utracić stanu zastosujemy double binding. Czyli podamy również `defaultValue` jako pierwszy element zwrócony przez hooka useState.
 
 ```jsx
 function Formularz() {
@@ -101,7 +101,7 @@ function Formularz() {
       <input
         type="text"
         name="input1"
-        value={inputValue}
+        defaultValue={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
       />
       <button type="submit">Wyślij</button>
