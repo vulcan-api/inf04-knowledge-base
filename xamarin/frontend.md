@@ -4,12 +4,13 @@
 
 1. [Layouty (Układy)](#1-layouty-układy)
     * [Grid (Siatka)](#grid-siatka)
+    * [StackLayout](#stacklayout)
    
 
 
 ---
-
-# 1. Layouty (Układy)
+`
+## 1. Layouty (Układy)
 
 ### Grid (Siatka)
  Grid porządkuje elementy w **wierszach** (`RowDefinitions`) i **kolumnach** (`ColumnDefinitions`). **`RowDefinition`** ma atrybut `Height`, a **`ColumnDefinition`** ma atrybut `Width`.
@@ -64,6 +65,8 @@ Element (Button) rozciąga się na dwie sąsiadujące kolumny i trzy rzędy. Uż
 #### 💡 Przykład Kodu XAML (Formularz)
 Wszystko opisane wyżej w jednym kodzie:
 
+
+
 ```xml
  <Grid>
      <Grid.RowDefinitions>
@@ -106,3 +109,70 @@ Wszystko opisane wyżej w jednym kodzie:
  </Grid>
 
 ```
+
+### StackLayout
+StackLayout układa elementy jeden po drugim w jednej linii (pionowej lub poziomej). Nie trzeba ustawiac zadnych rzedow itp jak w gridze.
+
+### Kluczowe Wymiary i Atrybuty (Dla Kontenera)
+
+| Właściwość | Wartość | Działanie |
+| :--- | :--- | :--- |
+| **`Orientation`** | `Vertical`, `Horizontal` | Kierunek stosu. **Vertical (pionowo) jest domyślnie** |
+| **`Spacing`** | Liczba (np. `10`) | Odstęp **pomiędzy** elementami wewnątrz stosu. |
+| **`Padding`** | Liczba lub `L,T,R,B` | Margines wewnętrzny stosu (odstęp od krawędzi kontenera do treści). |
+
+### Atrybuty dla elementów w środku StackLayout
+W StackLayout każdy element w środku może mieć własne `Options`:
+* **`HorizontalOptions`** / **`VerticalOptions`**:
+    * `Start`, `Center`, `End` – pozycjonowanie.
+    * `Fill` – rozciągnij na maxa.
+    * `AndExpand` – (np. `CenterAndExpand`,`FillAndExpand`) – zajmij całą wolną przestrzeń i ustaw się na środku.
+
+---
+
+### Szczegółowo (Analiza właściwości)
+
+#### 1. Kierunek (Orientation)
+```xml
+<StackLayout Orientation="Horizontal">
+```
+Elementy będą stały w jednym rzędzie obok siebie. Jak damy `Vertical` to jeden pod drugim.
+
+#### 2. Odstępy (Spacing i Padding)
+```xml
+<StackLayout Spacing="20" Padding="10, 20, 10, 20">
+```
+Spacing="20" robi 20px przerwy między elementami. Padding ustawia marginesy wewnętrzne: 10px z boków (lewo prawo) i 20px z góry i z dołu.
+
+#### 3. Wyrównanie (Options)
+```xml
+<Label Text="Hejka" VerticalOptions="CenterAndExpand" />
+```
+W tym wypadku mówimy Labelowi coś typu: "Weź tyle miejsca w pionie (vertical) ile zostalo wolnego i na srodku tego miejsca wstaw tekst.
+
+#### 💡 Przykład Kodu XAML (StackLayout (jest on bez sensu tylko jako przyklad xd))
+
+```xml
+<StackLayout 
+    Orientation="Horizontal" 
+    Spacing="50" 
+    Padding="20"
+    BackgroundColor="WhiteSmoke">
+
+    <Label Text="Góra" VerticalOptions="Start" />
+
+    <Label Text="Środek" VerticalOptions="Center" />
+
+    <Label Text="Dół" VerticalOptions="End" />
+
+    <Button 
+        Text="Rozciągnięty" 
+        HorizontalOptions="FillAndExpand" 
+        VerticalOptions="FillAndExpand" />
+
+</StackLayout>
+```
+#### Wytłumaczenie kodu:
+ Ustawiamy StackLayout na Horizontal czyli poziomy, wiec elementy ukladaja sie od lewej do prawej. Jako ze mamy 4 elementy (3 Labele i przycisk) to powstaja nam tak jakby 4 kolumny obok siebie (duzo miejsca jesli chodzi o wysokosc i malo szerokosci). Uzywamy VerticalOptions Start Center i End przez co pierwszy label ustawia sie na samej gorze swojej kolumny, drugi na srodku swojej, a trzeci na samym dole swojej. Przycisk w obu plaszcyznach rezerwuje cale pozostale miejsce i ustawia sie na srodku tego miejsca. 
+
+
