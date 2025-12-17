@@ -17,7 +17,7 @@
 
    
 **TIP:** Jak nie znasz atrybutów/zdarzeń/właściwości do jakieś kontrolki to klikając `Ctrl + Spacja` będąc wewnątrz kontrolki owtorzysz listę wszystkiego, co możesz w to miejsce wpisać.
-Taka ostatnia deska ratunku zarówno dla XAMLA jak i C#
+Taka ostatnia deska ratunku zarówno dla XAMLA jak i C#.
 
 ---
 
