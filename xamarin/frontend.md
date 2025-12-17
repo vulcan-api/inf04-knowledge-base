@@ -6,11 +6,21 @@
     * [Grid (Siatka)](#grid-siatka)
     * [StackLayout](#stacklayout)
     * [AbsoluteLayout](#absolutelayout)
-   
+2. [Kontrolki wyboru i tekstu](#2-kontrolki-wyboru-i-tekstu)
+    * [Label](#label)
+    * [Entry](#entry)
+    * [Editor](#editor)
+    * [CheckBox](#checkbox)
+    * [Switch](#switch)
+3. [Obrazki](#3-obrazki)
+    * [Image](#image)
 
+   
+**TIP:** Jak nie znasz atrybutów/zdarzeń/właściwości do jakieś kontrolki to klikając `Ctrl + Spacja` będąc wewnątrz kontrolki owtorzysz listę wszystkiego, co możesz w to miejsce wpisać.
+Taka ostatnia deska ratunku zarówno dla XAMLA jak i C#
 
 ---
-`
+
 ## 1. Layouty (Układy)
 
 ### Grid (Siatka)
@@ -219,4 +229,133 @@ Kolejnosc w kodzie decyduje o tym co wyswietla sie wyzej. Jesli 2 elementy beda 
            AbsoluteLayout.LayoutBounds="60, 100, 200, 40" />
 
 </AbsoluteLayout>
+```
+## 2. Kontrolki wyboru i tekstu
+Wszystkie kontrolki posiadają atrybut `x:Name`, który pozwala na ich identyfikację i obsługę w pliku logiki C# (`.xaml.cs`).
+
+### Label
+Służy do wyświetlania tekstu, którego użytkownik nie może edytować.
+* **Właściwości:** `Text`, `FontSize`, `TextColor`, `FontAttributes` (Bold, Italic).
+ ```xml
+<Label x:Name="Labelek" Text="Tekscior potezny" TextColor="Red" />
+```
+* **Zmiana w C#:**
+```C#
+Labelek.Text = "Nowy tekst";
+Labelek.TextColor = MojLabel.TextColor = Color.FromRgba(100,102,50,0.5);  // Zmiana na jakis tam kolor polprzezroczysty
+```
+
+### Entry
+Jednoliniowe pole tekstowe do wprowadzania danych przez uzytkownika.
+* **Właściwości: `Placeholder` (podpowiedź), `IsPassword` (ukrywa znaki), `Keyboard` (typ klawiatury), `MaxLength="20"` dlugosc tekstu.**
+
+```xml
+<Entry x:Name="MojeEntry" Placeholder="Wpisz login..." />
+```
+* **Zmiana w C#:**
+```C#
+string dane = MojeEntry.Text; // Pobieranie wpisanej wartości
+MojeEntry.Text = ""; // Czyszczenie pola
+```
+
+### Editor
+Wieloliniowe pole tekstowe, przeznaczone do wpisywania dłuższych treści.
+* Właściwości: `AutoSize="TextChanges"` (rośnie wraz z ilością tekstu), Placeholder.
+```xml
+<Editor x:Name="MojEditor" Placeholder="Wpisz dłuższą opinię..." />
+```
+
+* **Zmiana w C#**:
+```C#
+
+string trescOpinii = MojEditor.Text;
+
+
+MojEditor.Text = "Podmieniamy se sami tekst";
+```
+### CheckBox
+* Zaznacz odznacz zwraca True/False.
+* Właściwości: `IsChecked`, `Color`.
+
+```xml
+<CheckBox x:Name="MojCheckBox" IsChecked="True" />
+```
+
+* Zmiana w C#:
+```C#
+// 1. SPRAWDZANIE STANU 
+if (MojCheckBox.IsChecked) 
+{
+    // Jest zaznaczony
+}
+
+// 2. FUNKCJA ZDARZENIA (reaguje natychmiast na kliknięcie)
+private void MojCheckBox_CheckedChanged(object sender, CheckedChangedEventArgs e)
+{
+    // e.Value to nowa wartość (true lub false)
+    if (e.Value == true)
+    {
+        DisplayAlert("Info", "Zaznaczono zgodę!", "OK");
+    }
+    else
+    {
+        DisplayAlert("Info", "Wycofano zgodę", "OK");
+    }
+}
+
+```
+* Checkbox ma tez cos takiego jak `CheckedChanged="MojCheckBox_CheckedChanged"` czyli funkcja ktora odpala sie po **KAZDEJ** zmianie stanu.
+
+
+### Switch
+Graficzny przełącznik (on/off).
+* Właściwości: `IsToggled` (czy włączony), `ThumbColor` (kolor tego kolka co jest na switchu), `OnColor` (kolor suwaka).
+```xml
+<Switch x:Name="MojSwitch" IsToggled="False" />
+```
+* Zmiana w C#
+```C#
+if (MojSwitch.IsToggled) {
+    // Wykonaj akcję, gdy przełącznik jest włączony
+}
+```
+## 3. Obrazki
+Kontrolka `Image` służy do wyświetlania grafik.
+### Gdzie wrzucić plik?
+W eksploratorze rozwiązań wejdź do projektu **NazwaProjektu.Android** i znajdź folder:
+**`Resources / drawable`**
+
+1. Kliknij prawym na folder `drawable` -> Dodaj -> Istniejący element.
+2. Wybierz plik (nazwa musi być mała, np. `auto.png`, bez spacji).
+3. Sprawdź we właściwościach pliku, czy **Akcja Kompilacji** to **AndroidResource**
+
+### Image
+Kontrolka służąca do wyświetlania dodanych wcześniej zasobów graficznych.
+
+* **Właściwości:**
+    * `Source` – nazwa pliku
+    * `Aspect` – sposób dopasowania do ramki.
+
+| Właściwość | Działanie |
+| :--- |:--- |
+| **AspectFit** |Cały obrazek widoczny, zachowuje proporcje (standard). |
+|**AspectFill** | Wypełnia całe miejsce, może uciąć brzegi obrazka. |
+|**Fill**|Rozciąga obrazek "na siłę", by wypełnił ramkę.
+
+
+* **XAML:**
+```xml
+<Image x:Name="MojObrazek" 
+       Source="auto.png" 
+       HeightRequest="200" 
+       Aspect="AspectFit" />
+```
+
+* Zamianka w C#
+```C#
+ // 1. Zmiana na inny plik z folderu drawable
+ MojObrazek.Source = ImageSource.FromFile("blad.jpg");
+
+ // 2. Pobranie obrazka z linku (URL) nie przyda sie chyba bo nie mamy neta nie ale wrzucam bo ciezko to zapamietac a nigdy nic nie wiadomo xd
+// MojObrazek.Source = ImageSource.FromUri(new Uri("[https://strona.pl/foto.jpg](https://strona.pl/foto.jpg)"));
 ```
