@@ -5,6 +5,7 @@
 1. [Layouty (Układy)](#1-layouty-układy)
     * [Grid (Siatka)](#grid-siatka)
     * [StackLayout](#stacklayout)
+    * [AbsoluteLayout](#absolutelayout)
    
 
 
@@ -15,7 +16,7 @@
 ### Grid (Siatka)
  Grid porządkuje elementy w **wierszach** (`RowDefinitions`) i **kolumnach** (`ColumnDefinitions`). **`RowDefinition`** ma atrybut `Height`, a **`ColumnDefinition`** ma atrybut `Width`.
 
- `Grid.Row` oraz `Grid.Column` indeksują się od 0 a nie od 1.
+ **`Grid.Row` oraz `Grid.Column` indeksują się od 0 a nie od 1.**
 
 
 
@@ -176,3 +177,46 @@ W tym wypadku mówimy Labelowi coś typu: "Weź tyle miejsca w pionie (vertical)
  Ustawiamy StackLayout na Horizontal czyli poziomy, wiec elementy ukladaja sie od lewej do prawej. Jako ze mamy 4 elementy (3 Labele i przycisk) to powstaja nam tak jakby 4 kolumny obok siebie (duzo miejsca jesli chodzi o wysokosc i malo szerokosci). Uzywamy VerticalOptions Start Center i End przez co pierwszy label ustawia sie na samej gorze swojej kolumny, drugi na srodku swojej, a trzeci na samym dole swojej. Przycisk w obu plaszcyznach rezerwuje cale pozostale miejsce i ustawia sie na srodku tego miejsca. 
 
 
+### AbsoluteLayout
+Ten Layout daje nam **całkowitą dowolność**, ale najwięcej z nim roboty. Tu ustawiamy wszystko sami.
+
+**MOŻEMY TYM NP. NAKLADAC NA SIEBIE ELEMENTY!** (moze sie przyda akurat)
+
+ Właściwość | Wartość | Działanie |
+| :--- | :--- | :--- |
+| **`LayoutBounds`** | `X`, `Y`, `Szer`,`Wys` |  **Określa pozycję i rozmiar elementu.** |
+| **`LayoutFlags`** | `None`, `All`, `PositionProportional` | Ustala czy liczby sa sztywne czy sa np. procentami |
+
+### Szczegółowo (Analiza właściwości)
+
+#### 1. Ustawienie stałej pozycji i rozmiaru
+```xml
+<BoxView Color="Red" AbsoluteLayout.LayoutBounds="50, 50, 100, 100" />
+```
+Element zostanie narysowany dokładnie 50 jednostek od lewej (X) i 50 jednostek od góry (Y). Ma sztywny rozmiar 100x100.
+
+
+#### 2. Nakładanie elementów (Kolejność warstw)
+
+```xml
+<BoxView Color="Red" AbsoluteLayout.LayoutBounds="50, 50, 100, 100" />
+```
+Kolejnosc w kodzie decyduje o tym co wyswietla sie wyzej. Jesli 2 elementy beda miec te same wspolrzedne, to ten element ktory jest **NIZEJ W KODZIE** (później) będzie przykrywał ten co jest wyżej. 
+
+
+```xml
+<AbsoluteLayout BackgroundColor="WhiteSmoke">
+    
+    <BoxView Color="Red" 
+             AbsoluteLayout.LayoutBounds="50, 50, 100, 100" />
+
+    <BoxView Color="Blue" 
+             AbsoluteLayout.LayoutBounds="80, 80, 100, 100" />
+
+    <Label Text="WARSTWA PRZYKRYWAJACA  " 
+           TextColor="Black"
+           FontAttributes="Bold"
+           AbsoluteLayout.LayoutBounds="60, 100, 200, 40" />
+
+</AbsoluteLayout>
+```
