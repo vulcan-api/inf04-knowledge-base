@@ -67,7 +67,7 @@ Przycisk po prostu c:
 
 ### Obsługa zdarzenia w C#
 Potem w .xaml.cs (metoda)
-```csharp
+```cs
 private void Button_Click(object sender, RoutedEventArgs e)
 {
     //co ma robic ta funkcja
@@ -96,12 +96,29 @@ Pozwala użytkownikowi wybrać opcję typu "Tak/Nie" (True/False). Można zaznac
 ## RadioButton
 Służy do wyboru **tylko jednej** opcji z grupy. Zaznaczenie jednego elementu automatycznie odznacza pozostałe w tej samej grupie.
 
-### Przykład kodu
+### Przykład frontu
 ```xml
 <StackPanel>
-  <RadioButton GroupName="Plec" Content="Kobieta" />
-  <RadioButton GroupName="Plec" Content="Mężczyzna" IsChecked="True" />
+  <RadioButton x:Name="rbPlecKobieta" GroupName="Plec" Content="Kobieta" />
+  <RadioButton x:Name="rbPlecMezczyzna" GroupName="Plec" Content="Mężczyzna" IsChecked="True" />
 </StackPanel>
+```
+
+### Przykład logiki
+Niestety nie możemy pobrać po prostu wartości z np. GroupName'a, tylko niestety musimy sprawdzać każdy jeden guzik, czy jest zaznaczony.
+
+```cs
+public void LosowaMetoda()
+{
+    if (rbPlecKobieta.IsChecked == true)
+    {
+         // zaznaczono kobietę
+    }
+    else if (rbPlecMezczyzna.IsChecked == true)
+    {
+        // zaznaczono chopa
+    }
+}
 ```
 
 ### Właściwości
