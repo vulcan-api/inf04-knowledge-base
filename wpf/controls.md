@@ -108,16 +108,13 @@ Służy do wyboru **tylko jednej** opcji z grupy. Zaznaczenie jednego elementu a
 Niestety nie możemy pobrać po prostu wartości z np. GroupName'a, tylko niestety musimy sprawdzać każdy jeden guzik, czy jest zaznaczony.
 
 ```cs
-public void LosowaMetoda()
+if (rbPlecKobieta.IsChecked == true)
 {
-    if (rbPlecKobieta.IsChecked == true)
-    {
-         // zaznaczono kobietę
-    }
-    else if (rbPlecMezczyzna.IsChecked == true)
-    {
-        // zaznaczono chopa
-    }
+     // zaznaczono kobietę
+}
+else if (rbPlecMezczyzna.IsChecked == true)
+{
+    // zaznaczono chopa
 }
 ```
 
@@ -363,3 +360,28 @@ To ustawia elementy pionowo albo poziomo
     <Button Content="Klik 2"/>
 </StackPanel>
 ```
+
+## GroupBox 
+> GroupBox to WPFowy ekwiwalent znacznika ```<Fieldset> ``` Jest to obramówka grupująca powiązane ze sobą pola formularza
+
+Przykładowy 
+![GroupBox](./obrazki/groupbox.png)
+
+Kilka uwag:
+
++ Nagłówek GroupBoxa to ``` <GroupBox Header = "..."> ```
++ Wewnątrz GroupBoxa może znajdować się tylko jeden element - Dowolny, ale sugerowany jest np. `<StackPanel>`
+
+Przykładowy kod 
+
+```xml 
+<GroupBox Header="Login Credentials" Margin="10">
+    <StackPanel Margin="5">
+        <Label Content="Username:"/>
+        <TextBox/>
+        <Label Content="Password:"/>
+        <PasswordBox/>
+    </StackPanel>
+</GroupBox>
+
+``` 
