@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="INF04WeterynarzM.MainPage">
+
+    <StackLayout BackgroundColor="LightGreen">
+        <Label Text="Wizyta u lekarza" FontSize="Large" TextColor="SeaGreen" Padding="10"/>
+        <Entry Placeholder="Imię i nazwisko właściciela" x:Name="textName"/>
+        <Label Text="Gatunek zwierzęcia"/>
+        <Picker x:Name="pickerAnimal" SelectedIndexChanged="pickerAnimal_SelectedIndexChanged">
+        </Picker>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Ile ma lat?"/>
+            <Slider x:Name="sliderAge" Minimum="0" Maximum="20"/>
+        </StackLayout>
+        <Entry Placeholder="Cel wizyty" x:Name="textIssue"/>
+        <TimePicker x:Name="timePicker" Time="16:00"/>
+        <Button Text="OK" x:Name="btnOK" Clicked="btnOK_Clicked"/>
+    </StackLayout>
+
+</ContentPage>

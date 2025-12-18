@@ -1,0 +1,27 @@
+﻿<Window x:Class="INF04PlaylistaD.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:INF04PlaylistaD"
+        mc:Ignorable="d"
+        Title="Moje dźwięki. Autor: Geralt z Rivii" Height="250
+        " Width="800" Background="SeaGreen">
+    <Grid>
+        <Button x:Name="btnNext" Click="btnNext_Click"
+            HorizontalAlignment="Left" Margin="690,0,0,0" VerticalAlignment="Center" Height="52" Width="100" Background="#61D918">
+            <Image Source="/img/arrow.png" Width="100" Height="52"/>
+        </Button>
+        <Button x:Name="btnPrev" Click="btnPrev_Click"
+            HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Height="52" Width="100" Background="#61D918">
+            <Image Source="/img/image.png"  Width="100" Height="52"/>
+        </Button>
+        <Image HorizontalAlignment="Left" Height="100" Margin="128,0,0,0" VerticalAlignment="Center" Width="100" Source="/img/vinyl.png"/>
+        <Label x:Name="lblTitle" Content="[TYTUŁ PIOSENKI]" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="244,67,0,0" VerticalAlignment="Top" Width="175"/>
+        <Label x:Name="lblArtist" Content="[WYKONAWCA]" FontSize="15" FontStyle="Italic" Foreground="White" HorizontalAlignment="Left" Margin="244,0,0,0" VerticalAlignment="Center" Width="156"/>
+        <Label x:Name="lblCount" Content="[ILOŚĆ]" Foreground="#61D918" HorizontalAlignment="Left" Margin="244,137,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblYear" Content="[ROK]" Foreground="#61D918" HorizontalAlignment="Left" Margin="317,137,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblDownloads"  Content="[POBRANIA]" Foreground="#61D918" HorizontalAlignment="Left" Margin="128,183,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnDownload" Content="Pobierz" FontWeight="Bold" Background="#61D918" HorizontalAlignment="Left" Margin="229,189,0,0" VerticalAlignment="Top" Click="btnDownload_Click"/>
+    </Grid>
+</Window>

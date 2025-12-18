@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INF04GamblingK", "INF04GamblingK\INF04GamblingK.csproj", "{3B00C635-8712-46B9-A9B1-83AB80563579}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B00C635-8712-46B9-A9B1-83AB80563579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B00C635-8712-46B9-A9B1-83AB80563579}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B00C635-8712-46B9-A9B1-83AB80563579}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B00C635-8712-46B9-A9B1-83AB80563579}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4FB557C-746A-4E94-9D06-C5FBB7D5E869}
+	EndGlobalSection
+EndGlobal

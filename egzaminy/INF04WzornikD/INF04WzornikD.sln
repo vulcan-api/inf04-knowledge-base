@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "INF04WzornikD", "INF04WzornikD\INF04WzornikD.csproj", "{58EEB4A9-454C-49C5-8D2A-BE5C86D609C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58EEB4A9-454C-49C5-8D2A-BE5C86D609C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58EEB4A9-454C-49C5-8D2A-BE5C86D609C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58EEB4A9-454C-49C5-8D2A-BE5C86D609C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58EEB4A9-454C-49C5-8D2A-BE5C86D609C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB822546-ADA7-478D-ACC4-234763509886}
+	EndGlobalSection
+EndGlobal
