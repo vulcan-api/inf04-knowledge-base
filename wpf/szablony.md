@@ -272,3 +272,4 @@ class MainViewModel
     => this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 }
 ```
+
