@@ -1,6 +1,6 @@
 # WSKAŹNIKI i przekazywnaie 
 ## WERSJA C++
-#### Objaśnienie: zmienna a ma wartość 10 i jakiś adres (&a) w pamięci np. 0x61ff08, &a = 0x61ff08. Int* p ma przypisany adres zmiennej a dlatego:
+Objaśnienie: zmienna a ma wartość 10 i jakiś adres (&a) w pamięci np. 0x61ff08, &a = 0x61ff08. Int* p ma przypisany adres zmiennej a dlatego:
 ```cpp
 int a = 10;  // & -> weź adres
 int* p = &a; // * -> wartość spod adresu 
@@ -10,9 +10,9 @@ cout << p;   // adres, np. 0x61ff08
 cout << *p;  // 10 (wartość spod adresu)
 ```
 
-#### Przekazanie przez wskaźnik pozwala funkcji zmieniać wartość zmiennej zdefiniowanej poza nią, ponieważ operuje ona bezpośrednio na adresie tej zmiennej w pamięci.
-#### Wskaźnik jest potrzebny do np. zmiany zmiennej poza funkcja tzn. masz zmienna a w c++  i chcesz zmienić jej wartość:
-#### W tym przykładzie a ma jakiś adres i do tego adresu przypisuje wartosć 10 potem zmien() bierze adres x i w void ustawia jego wartość też na 10.
+Przekazanie przez wskaźnik pozwala funkcji zmieniać wartość zmiennej zdefiniowanej poza nią, ponieważ operuje ona bezpośrednio na adresie tej zmiennej w pamięci.
+Wskaźnik jest potrzebny do np. zmiany zmiennej poza funkcją tzn. masz zmienną `a` w c++ i chcesz zmienić jej wartość:
+W tym przykładzie `a` ma jakiś adres i do tego adresu przypisuje wartość 10 potem `zmien()` bierze adres `x` i w void ustawia jego wartość też na 10.
 ```cpp
 void zmien(int* a) {
     *a = 10;
@@ -28,7 +28,7 @@ int main() {
 // *a = 10 → zmiana wartości x
 ```
 ## WERSJA C#
-#### To to samo co 1 kod z cpp
+To to samo co 1 kod z cpp
 ```cs
 class Box
 {
@@ -48,7 +48,7 @@ class Program
     }
 }
 ```
-#### To to samo co 2 kod z cpp
+To to samo co 2 kod z cpp
 ```cs
 using System;
 
@@ -73,7 +73,7 @@ class Program
 }
 ```
 ## WERSJA pyton
-#### To to samo co 1 kod z cpp
+To to samo co 1 kod z cpp
 ```py
 a = 10
 p = a  # p referuje do tego samego obiektu (dla intów to obiekt niemutowalny)
