@@ -6,3 +6,4 @@ Przestarzała technologia, ale w sumie w MAUI jako tako powinno dalej działać.
 
 - [Color i Brush](./color-brush-xamarin.md)
 - [Time i Date Pickery](./time-i-date-picker.md)
+- [Style XAML](./style-xaml.md)
