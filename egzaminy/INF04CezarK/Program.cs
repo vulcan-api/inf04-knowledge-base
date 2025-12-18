@@ -16,8 +16,16 @@ class Program
                 if (znak >= 'a' && znak <= 'z')
                 {
                     wynik[i] = (char)((znak - 'a' + klucz + 26) % 26 + 'a');
-                }//przesunięcie o daną ilośc z klucza
-                else
+
+                //wynik[i] = (char)( ... ) zapewnia konwersje do typu char
+                // znak - 'a'   zapewnia zamiane znaku na cyfre 'a' - 'a' = 0 , 'b' - 'a' = 1 , 'z' - 'a' = 25
+                // + klucz      przesuwa o podany klucz 'a' → 0 + 3 = 3  ,  'x' → 23 + 3 = 26
+                // + 26         zapewnia że liczby będą dodatnie
+                // % 26         zapewnie że liczby nie wydją poza zakres
+                // + 'a'        przywraca spowtorem do liter
+
+            }
+            else
                 {
                     wynik[i] = znak;
                 }
