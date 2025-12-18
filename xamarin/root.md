@@ -10,3 +10,4 @@ Przestarzała technologia, ale w sumie w MAUI jako tako powinno dalej działać.
 - [Walidacja formularzy](./walidacja-formularzy.md)
 - [Observable Collection](./observable-collection.md)
 - [Ogólny frontend](./frontend.md)
+- [Style Xaml](./style-xaml.md)
