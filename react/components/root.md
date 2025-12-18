@@ -32,7 +32,7 @@ Przykład komponentu:
 
 ```jsx
 function Greeting(props) {
-    return <h1>Hello, {props.name}!</h1>;
+  return <h1>Hello, {props.name}!</h1>;
 }
 ```
 
@@ -64,7 +64,7 @@ Tak, to jest wazne.
 
 ```jsx
 function Greeting(props) {
-    return <h1>Hello, {props.name}!</h1>;
+  return <h1>Hello, {props.name}!</h1>;
 }
 ```
 
@@ -74,11 +74,12 @@ Nic prostszego, używamy czegoś takiego jak React Fragment.
 
 ```jsx
 function Greeting(props) {
-    return (
-        <>
-            <h1>Hello, {props.name}!</h1>
-            <h2>Nice to meet you!</h2>
-        </>);
+  return (
+    <>
+      <h1>Hello, {props.name}!</h1>
+      <h2>Nice to meet you!</h2>
+    </>
+  );
 }
 ```
 
@@ -96,7 +97,7 @@ Przykład:
 
 ```jsx
 function Greeting(props) {
-    return <h1>Hello, {props.name}!</h1>;
+  return <h1>Hello, {props.name}!</h1>;
 }
 
 export default Greeting;
@@ -106,7 +107,7 @@ lub
 
 ```jsx
 export default function Greeting(props) {
-    return <h1>Hello, {props.name}!</h1>;
+  return <h1>Hello, {props.name}!</h1>;
 }
 ```
 
@@ -118,7 +119,7 @@ Przykład:
 
 ```jsx
 function Greeting(props) {
-    return <h1 className="jajo">Hello, {props.name}!</h1>;
+  return <h1 className="jajo">Hello, {props.name}!</h1>;
 }
 ```
 
@@ -126,7 +127,7 @@ zamiast
 
 ```jsx
 function Greeting(props) {
-    return <h1 class="jajo">Hello, {props.name}!</h1>;
+  return <h1 class="jajo">Hello, {props.name}!</h1>;
 }
 ```
 

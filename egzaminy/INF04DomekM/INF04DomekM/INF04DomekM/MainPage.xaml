@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="INF04DomekM.MainPage">
+
+    <StackLayout Padding = "0, 20, 0, 0">
+        <Label Text="Domek w górach" FontSize="Large"/>
+        <Image Source="obrazek.jpg"></Image>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="POLUB" x:Name="btnLike" Clicked="btnLike_Clicked" HorizontalOptions="FillAndExpand" Margin="0" BackgroundColor="Teal" TextColor="White"/>
+            <Button Text="USUŃ" x:Name="btnDelete" Clicked="btnDelete_Clicked" HorizontalOptions="FillAndExpand" Margin="0" BackgroundColor="Teal" TextColor="White" />
+            <Button Text="ZAPISZ" x:Name="btnSave" Clicked="btnSave_Clicked" HorizontalOptions="FillAndExpand" Margin="0" BackgroundColor="Teal" TextColor="White" />
+        </StackLayout>
+        <Label Text="0 polubień" x:Name="lblCount" FlowDirection="RightToLeft" HorizontalTextAlignment="End" Margin="20" />
+        <BoxView HeightRequest="1" Color="Black"/>
+        <Line Aspect="Fill" />
+        <Label Text="Opis" FontAttributes="Bold"/>
+        <Label Text="Odwiedź komfortowy domek w Sudetach, blisko do szlaków turystycznych" TextColor="Gray"/>
+    </StackLayout>
+
+</ContentPage>

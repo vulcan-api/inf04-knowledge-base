@@ -18,13 +18,14 @@ Hook należy zaimportować z biblioteki React, a następnie wywołać go tak, ja
 import { useState } from "react";
 
 function Greeting(props) {
-    const [name, _setName] = useState("Kamil Ślimak");
+  const [name, _setName] = useState("Kamil Ślimak");
 
-    return (
-        <>
-            <h1>Hello, {name}!</h1>
-            <h2>Nice to meet you!</h2>
-        </>);
+  return (
+    <>
+      <h1>Hello, {name}!</h1>
+      <h2>Nice to meet you!</h2>
+    </>
+  );
 }
 ```
 
@@ -85,7 +86,7 @@ Przykład użycia jak cwel:
 import { useState } from "react";
 
 function Greeting(props) {
-    function jestemCwelemINieZnamZasad() {      
+    function jestemCwelemINieZnamZasad() {
         const [name, _setName] = useState("Cwel Cweliński Pierwszy");
     }
 
@@ -111,7 +112,7 @@ function Greeting(props) {
 
 ## Omówienie każdego z hooków pojedyńczo
 
-Omówimy sobie każdy ważny dla nas hook pojedyńczo w swoim czasie.
+Omówimy sobie każdy ważny dla nas hook. Na początku będą przykłady ich wywołania, na szybką ściąge a potem dokładny opis.
 
 Oto lista:
 
