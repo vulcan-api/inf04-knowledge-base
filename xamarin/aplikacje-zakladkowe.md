@@ -35,9 +35,15 @@ IconImageSource="ikona.png"
 ```
 Pliki ikon należy umieścić w katalogu Resources (Android/iOS)
 
-
 Kolejność: Zakładki wyświetlają się w takiej kolejności, w jakiej są zapisane w kodzie (od góry do dołu w XAML).
 
-MainPage.xaml MUSI dziedziczyć po TabbedPage.
+MainPage.xaml MUSI dziedziczyć po TabbedPage. Czyli zamiast następującego kodu w MainPage.xaml.cs
+```cs
+public partial class MainPage : ContentPage
+```
+musi być
+```cs
+public partial class MainPage : TabbedPage
+```
 
-Strony muszą dziedziczyć po ContentPage
+Strony natomiast muszą normalnie dziedziczyć po ContentPage.
