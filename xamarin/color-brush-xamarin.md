@@ -1,6 +1,6 @@
 # Xarmarin Color Brush
 
-Powrót na start -> [Start](../root)
+Powrót na start -> [Start](./root.md)
 
 ## 1. Wprowadzenie
 
