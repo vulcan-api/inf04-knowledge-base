@@ -61,3 +61,36 @@ class Program
 ### Wskazówki
 * ### Dlaczego k++ działa?
  Może się wydawać, że powinniśmy zwiększać k tylko o liczby pierwsze. Jednak dzięki pętli wewnętrznej, gdy k dotrze do liczby złożonej (np. 4), to wszystkie jej dzielniki pierwsze (np. 2) zostały już dawno wyeliminowane z liczby n. Zatem n % 4 nigdy nie zwróci 0.
+
+ ## 3. Implementacja w C++
+
+Poniżej znajduje się implementacja wykorzystująca standardowe strumienie wejścia/wyjścia. Logika pozostaje identyczna jak w wersji C#, co ułatwia naukę obu języków jednocześnie.
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+void rozkladNaCzynniki(int n) {
+    int k = 2; // Najmniejszy potencjalny dzielnik pierwszy
+
+    // Dopóki liczba n nie zostanie zredukowana do 1
+    while (n > 1) {
+        // Sprawdzamy, czy k dzieli n bez reszty
+        while (n % k == 0) {
+            cout << k << " "; // Wypisujemy czynnik
+            n /= k;           // Dzielimy n przez k
+        }
+        k++; // Zwiększamy dzielnik
+    }
+    cout << endl;
+}
+
+int main() {
+    int liczba = 120;
+
+    cout << "Czynniki pierwsze liczby " << liczba << " to: ";
+    rozkladNaCzynami(liczba);
+
+    return 0;
+}

@@ -70,3 +70,47 @@ class Program
         SitoEratostenesa(zakres);
     }
 }
+```
+## 3. Implementacja w C++
+
+Wersja zoptymalizowana z dynamiczną alokacją tablicy (użycie `bool*` lub `std::vector<bool>` jest zalecane przy dużych zakresach):
+
+```cpp
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+void sitoEratostenesa(int n) {
+    // 1. Inicjalizacja tablicy (std::vector<bool> jest bardzo oszczędny pamięciowo)
+    vector<bool> czyPierwsza(n + 1, true);
+
+    // 2. Indeksy 0 i 1 nie są liczbami pierwszymi
+    czyPierwsza[0] = czyPierwsza[1] = false;
+
+    // 3. Główna pętla sita (odsiewanie)
+    // i * i <= n zastępuje użycie funkcji sqrt(n)
+    for (int i = 2; i * i <= n; i++) {
+        if (czyPierwsza[i]) {
+            // Wielokrotności wykreślamy zaczynając od i * i
+            for (int j = i * i; j <= n; j += i) {
+                czyPierwsza[j] = false;
+            }
+        }
+    }
+
+    // 4. Wypisanie wyników
+    cout << "Liczby pierwsze w przedziale od 2 do " << n << ":" << endl;
+    for (int i = 2; i <= n; i++) {
+        if (czyPierwsza[i]) {
+            cout << i << " ";
+        }
+    }
+    cout << endl;
+}
+
+int main() {
+    int zakres = 100;
+    sitoEratostenesa(zakres);
+    return 0;
+}
