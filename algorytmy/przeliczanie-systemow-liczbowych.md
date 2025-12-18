@@ -1,5 +1,7 @@
 # Przeliczanie Systemów Liczbowych
 
+Powrót na start -> [Start](./root.md)
+
 Na egzaminie INF.04 może pojawić się potrzeba przeliczenia liczby między dowolnymi systemami (np. z binarnego na szesnastkowy)
 
 ### 1. Dziesiętny na Binarny 

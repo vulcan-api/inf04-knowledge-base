@@ -1,7 +1,7 @@
 
 # Walidacja Formularzy w Xamarin.Forms (Kompendium)
 
-Powrót na start -> [Start](../root)
+Powrót na start -> [Start](./root.md)
 
 ## 1. Wstęp
 

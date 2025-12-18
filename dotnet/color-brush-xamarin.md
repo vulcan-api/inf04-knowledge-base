@@ -1,4 +1,4 @@
-# Xarmarin Color Brush
+# Color Brush
 
 Powrót na start -> [Start](./root.md)
 

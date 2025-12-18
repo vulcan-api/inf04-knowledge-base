@@ -1,5 +1,7 @@
 # Struktury danych – C++ i C#
 
+Powrót na start -> [Start](./root.md)
+
 ## C++: Obsługa struktur danych
 
 ```cpp

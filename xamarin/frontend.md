@@ -1,4 +1,5 @@
 # Frontend – Xamarin.Forms i .NET MAUI
+- Powrót na start -> [Start](./root.md)
 
 # 📝 Spis Treści
 

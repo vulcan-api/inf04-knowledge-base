@@ -1,5 +1,7 @@
 # Wyszukiwanie Liniowe (Linear Search)
 
+Powrót na start -> [Start](./root.md)
+
 Wyszukiwanie liniowe to najprostszy algorytm wyszukiwania. Polega na przeglądaniu elementów kolekcji jeden po drugim, aż znajdziemy szukaną wartość lub dotrzemy do końca listy.
 
   

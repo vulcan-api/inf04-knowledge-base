@@ -1,4 +1,5 @@
 ## ObservableCollection
+- Powrót na start -> [Start](./root.md)
 
 # 1. Definicja
 

@@ -1,4 +1,6 @@
 # Data Template
+
+Powrót na start -> [Start](./root.md)
 Sposób na przechowanie danych w XAML. Alternatywa dla klasycznego przypisania. 
 ## Kod
 ### Podstawowy kod (z bindingiem)
