@@ -1,5 +1,10 @@
-# Baza wiedzy do egzamini INF.04
+# Baza wiedzy do egzaminu INF.04
 
-- [WPF - Desktopowe](./wpf/root.md)
+Krótki spis sekcji w repozytorium. Kliknij sekcję aby przejść do jej strony startowej (`root.md`) z listą tematów.
+
+- [Algorytmy](./algorytmy/root.md)
+- [.NET / Dotnet](./dotnet/root.md)
+- [Programistyka](./programistyka/root.md)
 - [React - Webowe](./react/root.md)
-- [Konsolowka](./Konsolowa/root.md)
+- [WPF - Desktopowe](./wpf/root.md)
+- [Xamarin / MAUI (mobilne)](./xamarin/root.md)

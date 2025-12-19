@@ -1,5 +1,7 @@
 # Wyszukiwanie Binarne (Binary Search)
 
+Powrót na start -> [Start](./root.md)
+
 Wyszukiwanie binarne działa na zasadzie "dziel i zwyciężaj". Zamiast sprawdzać każdy element po kolei, za każdym razem odrzucamy połowę tablicy, w której na pewno nie ma szukanego elementu.
 
 ----------

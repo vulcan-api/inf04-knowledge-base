@@ -1,5 +1,7 @@
 # Obsługa plików (dialog)
 
+Powrót na start -> [Start](./root.md)
+
 ![Wizualizacja o co biega](./obrazki/opensave.png)
 
 ## OpenFileDialog

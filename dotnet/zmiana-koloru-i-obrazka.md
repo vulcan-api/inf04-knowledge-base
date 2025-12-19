@@ -1,4 +1,6 @@
 # Dynamiczna zmiana obrazka lub koloru w C# 
+
+Powrót na start -> [Start](./root.md)
  
 ## Zamiana koloru w Xamarin.Forms i MAUI
  

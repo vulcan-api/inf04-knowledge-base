@@ -1,5 +1,7 @@
 # Ciąg Fibonacciego (Iteracyjnie)
 
+Powrót na start -> [Start](./root.md)
+
 Ciąg Fibonacciego to ciąg liczb naturalnych, w którym każdy kolejny wyraz (oprócz dwóch pierwszych) jest sumą dwóch poprzednich.
 
 **Początek ciągu:** $0, 1, 1, 2, 3, 5, 8, 13, 21, 34, \dots$

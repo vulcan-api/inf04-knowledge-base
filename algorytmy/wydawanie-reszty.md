@@ -1,5 +1,7 @@
 # Wydawanie Reszty (Zachłanny)
 
+Powrót na start -> [Start](./root.md)
+
 Algorytm ten ma za zadanie wypłacić określoną kwotę przy użyciu jak najmniejszej liczby monet lub banknotów.
 
 ----------
