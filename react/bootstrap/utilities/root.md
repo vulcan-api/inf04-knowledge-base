@@ -1,0 +1,20 @@
+# Utilities
+
+Powrót na start -> [Start](../../root.md) | [Bootstrap](../root.md)
+
+- [Background](./background.md)
+- [Borders](./borders.md)
+- [Colors](./colors.md)
+- [Display](./display.md)
+- [Flex](./flex.md)
+- [Float](./float.md)
+- [Link](./link.md)
+- [Opacity](./opacity.md)
+- [Overflow](./overflow.md)
+- [Position](./position.md)
+- [Shadows](./shadows.md)
+- [Sizing](./sizing.md)
+- [Spacing](./spacing.md)
+- [Text](./text.md)
+- [Vertical Align](./vertical-align.md)
+- [Visibility](./visibility.md)
