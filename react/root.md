@@ -14,4 +14,8 @@ Krótkie omówienie, w miarę bez pieprzenia o niczym. Jeśli ktoś woli, będę
 
 [Obsługa Formularzy](./forms/root.md)
 
+[Bootstrap](./bootstrap/root.md)
+
 [BONUS - rzeczy z jsa stricte pod egzamin](./general/root.md)
+
+[Wersja dla debili (krok po kroku)](./dla-debili/root.md)
