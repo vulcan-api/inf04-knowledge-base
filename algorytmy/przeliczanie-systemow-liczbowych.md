@@ -255,3 +255,195 @@ class Program
 ----------
 
 **Wskazówka:** Pamiętaj o obsłudze wielkości liter (`ToUpper()`) przy systemie szesnastkowym, aby algorytm był odporny na błędy użytkownika.
+
+
+## 6. Implementacja w C++
+
+W C++ do pracy z tekstami używamy typu `string`. Ważną różnicą jest sposób budowania napisu – zamiast doklejać znaki na początek (co jest mało wydajne), często dodajemy je na koniec, a potem odwracamy cały ciąg funkcją `reverse`.
+
+### 1. Dziesiętny na Binarny / Dowolny
+
+C++
+
+```cpp
+#include <iostream>
+#include <string>
+#include <algorithm> // Dla funkcji reverse
+
+using namespace std;
+
+string dziesietnyNaDowolny(int liczba, int podstawa) {
+    if (liczba == 0) return "0";
+    
+    string wynik = "";
+    
+    while (liczba > 0) {
+        // Obliczamy resztę i zamieniamy ją na znak char
+        int reszta = liczba % podstawa;
+        wynik += to_string(reszta); // Dodajemy na koniec
+        
+        liczba /= podstawa;
+    }
+    
+    // Ponieważ dodawaliśmy na koniec, musimy odwrócić wynik
+    reverse(wynik.begin(), wynik.end());
+    return wynik;
+}
+
+int main() {
+    cout << "13 dziesietnie na binarny: " << dziesietnyNaDowolny(13, 2) << endl;
+    return 0;
+}
+
+```
+
+----------
+
+### 2. Binarny na Dziesiętny
+
+C++
+
+```cpp
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int binarnyNaDziesietny(string binarny) {
+    int wynik = 0;
+    int waga = 1; // 2^0
+
+    // Przechodzimy od końca napisu (prawa strona)
+    for (int i = binarny.length() - 1; i >= 0; i--) {
+        if (binarny[i] == '1') {
+            wynik += waga;
+        }
+        waga *= 2; // Zwiększamy wagę dwukrotnie
+    }
+    return wynik;
+}
+
+int main() {
+    cout << "1101 binarnie na dziesietny: " << binarnyNaDziesietny("1101") << endl;
+    return 0;
+}
+
+```
+
+----------
+
+### 3. Dziesiętny na Szesnastkowy
+
+C++
+
+```cpp
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+string dziesietnyNaHex(int liczba) {
+    if (liczba == 0) return "0";
+    
+    string hexZnaki = "0123456789ABCDEF";
+    string wynik = "";
+
+    while (liczba > 0) {
+        int reszta = liczba % 16;
+        // Pobieramy znak z tablicy indeksów
+        wynik += hexZnaki[reszta];
+        liczba /= 16;
+    }
+
+    reverse(wynik.begin(), wynik.end());
+    return wynik;
+}
+
+int main() {
+    cout << "255 dziesietnie na HEX: " << dziesietnyNaHex(255) << endl;
+    return 0;
+}
+
+```
+
+----------
+
+### 4. Szesnastkowy na Dziesiętny
+
+C++
+
+```cpp
+#include <iostream>
+#include <string>
+#include <cctype> // Dla funkcji toupper
+
+using namespace std;
+
+int hexNaDziesietny(string hex) {
+    int wynik = 0;
+    int waga = 1;
+
+    for (int i = hex.length() - 1; i >= 0; i--) {
+        char znak = toupper(hex[i]); // Standaryzacja na wielkie litery
+        int wartosc = 0;
+
+        if (znak >= '0' && znak <= '9') {
+            wartosc = znak - '0'; // Konwersja char '0'-'9' na int
+        } else if (znak >= 'A' && znak <= 'F') {
+            wartosc = znak - 'A' + 10; // 'A' = 10, 'B' = 11...
+        }
+
+        wynik += wartosc * waga;
+        waga *= 16;
+    }
+    return wynik;
+}
+
+int main() {
+    cout << "1A w HEX na dziesietny: " << hexNaDziesietny("1A") << endl;
+    return 0;
+}
+
+```
+
+----------
+
+### 5. Wbudowane metody w C++ (Formatowanie)
+
+W C++ możemy łatwo wypisać liczbę w systemie ósemkowym lub szesnastkowym bezpośrednio do strumienia `cout`:
+
+C++
+
+```cpp
+#include <iostream>
+#include <iomanip> // Dla manipulatorów
+
+using namespace std;
+
+int main() {
+    int liczba = 255;
+
+    // Wypisanie szesnastkowe
+    cout << hex << liczba << endl; // ff
+
+    // Wypisanie ósemkowe
+    cout << oct << liczba << endl; // 377
+    
+    // Powrót do dziesiętnego
+    cout << dec << liczba << endl; // 255
+
+    return 0;
+}
+
+```
+
+----------
+
+### Wskazówki egzaminacyjne dla C++:
+
+-   **Operacja `znak - '0'`:** To najszybszy sposób na zamianę cyfry zapisanej jako tekst na liczbę. Działa, ponieważ kody ASCII cyfr są ułożone po kolei.
+    
+-   **Nagłówek `<algorithm>`:** Pamiętaj o nim, jeśli chcesz użyć `reverse()`. Na egzaminie INF.04 często zapomina się o tej bibliotece.
+    
+-   **Typ `long long`:** Jeśli przeliczasz bardzo duże liczby (np. długie ciągi binarne), użyj `long long` zamiast `int`, aby uniknąć przepełnienia zakresu.

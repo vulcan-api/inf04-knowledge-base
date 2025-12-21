@@ -105,3 +105,77 @@ class Program
     }
 }
 ```
+
+## 3. Implementacja w C++ (Iteracyjna)
+
+Wersja iteracyjna jest optymalna pod względem pamięciowym i czasowym. Wykorzystuje proste przypisania w pętli.
+
+C++
+
+```cpp
+#include <iostream>
+using namespace std;
+
+/**
+ * Funkcja oblicza n-ty wyraz ciągu Fibonacciego iteracyjnie.
+ * Typ long long pozwala przechowywać znacznie większe liczby niż zwykły int.
+ */
+long long fibonacciIteracyjny(int n) {
+    // Przypadek dla F(0) = 0 i F(1) = 1
+    if (n <= 1) return n;
+
+    long long poprzednia = 0; // F(i-2)
+    long long aktualna = 1;   // F(i-1)
+    long long nastepna = 0;
+
+    // Obliczamy wyrazy od 2 do n
+    for (int i = 2; i <= n; i++) {
+        nastepna = poprzednia + aktualna; // Suma dwóch poprzednich
+        poprzednia = aktualna;            // Przesunięcie okna: stara aktualna staje się poprzednią
+        aktualna = nastepna;              // Przesunięcie okna: nowa suma staje się aktualną
+    }
+
+    return aktualna;
+}
+
+int main() {
+    int n = 10;
+    // cout służy do wyświetlania danych w konsoli
+    cout << n << ". wyraz ciagu to: " << fibonacciIteracyjny(n) << endl;
+    return 0;
+}
+
+```
+
+----------
+
+## 4. Implementacja w C++ (Rekurencyjna)
+
+Rekurencja w C++ jest bardzo czytelna, ale pamiętaj o jej wadzie: dla dużych `n` (np. $n > 40$) program może się "zawiesić" z powodu ogromnej liczby powtarzających się obliczeń.
+
+C++
+
+```cpp
+#include <iostream>
+using namespace std;
+
+/**
+ * Funkcja oblicza n-ty wyraz ciągu Fibonacciego rekurencyjnie.
+ */
+long long fibonacciRekurencyjny(int n) {
+    // 1. WARUNEK STOPU: zwraca 0 dla n=0 i 1 dla n=1
+    if (n <= 1) {
+        return n;
+    }
+
+    // 2. REKURENCJA: funkcja wywołuje samą siebie dla dwóch mniejszych argumentów
+    return fibonacciRekurencyjny(n - 1) + fibonacciRekurencyjny(n - 2);
+}
+
+int main() {
+    int n = 7;
+    // Wyświetlenie wyniku (0, 1, 1, 2, 3, 5, 8, 13...)
+    cout << "Wyraz numer " << n << " to: " << fibonacciRekurencyjny(n) << endl;
+    return 0;
+}
+```
