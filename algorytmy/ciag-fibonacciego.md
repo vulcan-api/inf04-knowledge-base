@@ -8,7 +8,7 @@ Ciąg Fibonacciego to ciąg liczb naturalnych, w którym każdy kolejny wyraz (o
 
 ----------
 
-## 1. Logika działania
+## Logika działania
 
 -   $F(0) = 0$
     
@@ -19,7 +19,7 @@ Ciąg Fibonacciego to ciąg liczb naturalnych, w którym każdy kolejny wyraz (o
 
 ----------
 
-## 2. Implementacja w C#
+## Implementacja w C#
 
 Na egzaminie INF.04 możesz zostać poproszony o wersję **iteracyjną** (wydajniejszą) lub **rekurencyjną** (krótszą w zapisie).
 
@@ -73,7 +73,7 @@ Rekurencja polega na tym, że funkcja wywołuje samą siebie, aby rozwiązać mn
 
 ----------
 
-## 1. Kod w języku C#
+## Kod w języku C#
 
 Poniżej znajduje się najprostsza, klasyczna implementacja rekurencyjna:
 
@@ -106,7 +106,7 @@ class Program
 }
 ```
 
-## 3. Implementacja w C++ (Iteracyjna)
+## Implementacja w C++ (Iteracyjna)
 
 Wersja iteracyjna jest optymalna pod względem pamięciowym i czasowym. Wykorzystuje proste przypisania w pętli.
 
@@ -149,7 +149,7 @@ int main() {
 
 ----------
 
-## 4. Implementacja w C++ (Rekurencyjna)
+## Implementacja w C++ (Rekurencyjna)
 
 Rekurencja w C++ jest bardzo czytelna, ale pamiętaj o jej wadzie: dla dużych `n` (np. $n > 40$) program może się "zawiesić" z powodu ogromnej liczby powtarzających się obliczeń.
 
