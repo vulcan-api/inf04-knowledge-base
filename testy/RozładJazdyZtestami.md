@@ -7,23 +7,25 @@ Celem  jest pokazanie, jak dodać i uruchomić **testy jednostkowe xUnit** dla l
 
 ---
 
-## 2. Dodanie projektu testowego xUnit // screen 1
+## 2. Dodanie projektu testowego xUnit
 
 1. Otwórz rozwiązanie **ArkuszCezar** w Visual Studio
 2. Kliknij **PPM na Solution**
 3. Wybierz **Add → New Project**
 4. Wybierz **xUnit Test Project (.NET)**
-5. Nazwij projekt: <NazwaArkusza>.Tests   // wtym przypadku bedzie to ArkuszCezar.Tests
+5. Nazwij projekt: <NazwaArkusza>.Tests   // w tym przypadku bedzie to ArkuszCezar.Tests
 
-## 3. Dodanie referencji do projektu WPF // screen 2
+![](testy01.png)
 
-1.Kliknij **PPM na ArkuszCezar.Tests**
+## 3. Dodanie referencji do projektu WPF
 
-2.następnie **Add → Project Reference**
+1. Kliknij **PPM na ArkuszCezar.Tests**
+2. Następnie **Add → Project Reference**
 
-będziemy testowac funckje **public static string Szyfruj(string tekst, int klucz)**  // screen 4
+![](testy02.png)
 
-// screen 3
+Będziemy testowac funkcję `public static string Szyfruj(string tekst, int klucz)`
+
 ```csharp
 namespace ArkuszCezar.Tests
 {
@@ -45,11 +47,7 @@ namespace ArkuszCezar.Tests
 
 ```
 
+![](testy04.png)
+![](testy03.png)
 
-### Screen 1 ![](testy01.png)
 
-### Screen 2 ![](testy02.png)
-
-### Screen 3 ![](testy03.png)
-
-### Screen 4 ![](testy04.png)
