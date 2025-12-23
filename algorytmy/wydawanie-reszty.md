@@ -158,3 +158,104 @@ class Program
 ```
 ---
 
+## 4. Implementacja w C++ (Algorytm Zachłanny)
+
+W C++ kluczowe jest użycie operatora `%` (modulo) do szybkiego obliczania pozostałej reszty oraz pętli `for` do przechodzenia przez tablicę nominałów.
+
+C++
+
+```cpp
+#include <iostream>
+using namespace std;
+
+/**
+ * Wydawanie reszty algorytmem zachłannym.
+ * @param reszta - kwota do wydania w groszach
+ */
+void wydajReszteZachlannie(int reszta) {
+    // Nominały posortowane malejąco (w groszach)
+    int nominaly[] = {500, 200, 100, 50, 20, 10, 5, 2, 1};
+    // sizeof(nominaly)/sizeof(int) - obliczanie liczby elementów w tablicy
+    int n = sizeof(nominaly) / sizeof(int);
+
+    cout << "Reszta w monetach: " << endl;
+
+    for (int i = 0; i < n; i++) {
+        // Sprawdzamy, czy dany nominał jest mniejszy lub równy pozostałej reszcie
+        if (reszta >= nominaly[i]) {
+            // Obliczamy ile sztuk danego nominału wydać
+            int liczbaMonet = reszta / nominaly[i];
+            
+            // Wypisujemy wynik (dzielimy przez 100.0, aby pokazać zł)
+            cout << "Nominal " << nominaly[i] / 100.0 << " zl: " << liczbaMonet << " szt." << endl;
+            
+            // Obliczamy pozostałą kwotę za pomocą modulo
+            reszta %= nominaly[i];
+        }
+    }
+}
+
+int main() {
+    // Przykład: 18.47 zł zamieniamy na 1847 groszy
+    int kwotaWGroszach = 1847;
+    wydajReszteZachlannie(kwotaWGroszach);
+
+    return 0;
+}
+
+```
+
+----------
+
+## 5. Implementacja w C++ (Algorytm Dynamiczny)
+
+Wersja dynamiczna w C++ często korzysta z wartości `2147483647` (maksymalny `int`) jako reprezentacji nieskończoności.
+
+C++
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm> // Dla funkcji min()
+
+using namespace std;
+
+/**
+ * Wyznacza minimalną liczbę monet potrzebną do wydania kwoty.
+ */
+int wydajReszteDynamicznie(int nominaly[], int n, int kwota) {
+    // Tworzymy dynamiczną tablicę (vector) o rozmiarze kwota + 1
+    // minMonety[i] będzie przechowywać najmniejszą liczbę monet dla kwoty 'i'
+    vector<int> minMonety(kwota + 1, 1000000); // 1000000 zastępuje nieskończoność
+
+    // Dla kwoty 0 potrzeba 0 monet
+    minMonety[0] = 0;
+
+    // Przechodzimy przez wszystkie kwoty od 1 do celu
+    for (int i = 1; i <= kwota; i++) {
+        // Dla każdej kwoty sprawdzamy wszystkie dostępne nominały
+        for (int j = 0; j < n; j++) {
+            if (i >= nominaly[j]) {
+                // Relacja rekurencyjna:
+                // sprawdzamy, czy lepiej zostać przy obecnym wyniku, 
+                // czy wziąć 1 monetę aktualną + wynik dla reszty kwoty
+                minMonety[i] = min(minMonety[i], 1 + minMonety[i - nominaly[j]]);
+            }
+        }
+    }
+
+    return minMonety[kwota];
+}
+
+int main() {
+    int nominaly[] = {1, 3, 4};
+    int n = sizeof(nominaly) / sizeof(int);
+    int reszta = 6;
+
+    int wynik = wydajReszteDynamicznie(nominaly, n, reszta);
+
+    cout << "Minimalna liczba monet dla kwoty " << reszta << " to: " << wynik << endl;
+
+    return 0;
+}
+```
