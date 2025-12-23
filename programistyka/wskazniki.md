@@ -1,4 +1,7 @@
 # WSKAŹNIKI i przekazywnaie 
+
+Powrót na start -> [Start](./root.md)
+
 ## WERSJA C++
 Objaśnienie: zmienna a ma wartość 10 i jakiś adres (&a) w pamięci np. 0x61ff08, &a = 0x61ff08. Int* p ma przypisany adres zmiennej a dlatego:
 ```cpp
