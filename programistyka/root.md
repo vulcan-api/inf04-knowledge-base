@@ -1,4 +1,3 @@
-<<<<<<< HEAD:programistyka/root.md
 # Programistyka
 
 Powrót na start -> [Start](../root.md)
@@ -9,3 +8,5 @@ Krótkie omówienie, w miarę bez pieprzenia o niczym. Jeśli ktoś woli, będę
 
 - [Struktury danych](./struktury-danych.md)
 - [Wskaźniki](./wskazniki.md)
+- [Lambda (funkcja anonimowe (funkcja strzałkowa))](./lambda.md)
+- [Rekurencja](./rekurencja.md)
