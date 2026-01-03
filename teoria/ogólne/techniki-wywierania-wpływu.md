@@ -1,5 +1,7 @@
 # Techniki wywierania wpływu
 
+[Pełny artykuł](https://szkolenia.certes.pl/techniki-wywierania-wplywu/)
+
 Formy manipulacji, których celem jest zachachmęcić kogoś do żeby coś zrobił albo myślał
 
 ## Reguła wzajemności
