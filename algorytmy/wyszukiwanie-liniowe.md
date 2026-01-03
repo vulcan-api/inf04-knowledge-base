@@ -4,7 +4,7 @@ Powrót na start -> [Start](./root.md)
 
 Wyszukiwanie liniowe to najprostszy algorytm wyszukiwania. Polega na przeglądaniu elementów kolekcji jeden po drugim, aż znajdziemy szukaną wartość lub dotrzemy do końca listy.
 
-  
+
 
 ---
 
@@ -98,7 +98,7 @@ Console.WriteLine("Nie znaleziono elementu w tablicy.");
 
 ```
 
-  
+  a
 
 ---
 
@@ -224,3 +224,113 @@ Console.WriteLine("Nie ma takiej liczby.");
 ```
 ---
 
+## 4. Implementacja w C++
+
+W języku **C++** tablice nie przechowują informacji o swojej długości tak jak w **C#**.
+
+Dlatego do każdej funkcji wyszukującej musimy przekazać **dodatkowy parametr rozmiaru**.
+
+----------
+
+##  Klasyczne wyszukiwanie liniowe
+
+
+
+C++
+
+```cpp
+#include <iostream> 
+using namespace std;
+
+// Metoda zwraca indeks elementu lub -1 w przypadku braku
+int wyszukajLiniowo(int tablica[], int rozmiar, int szukana) {
+    // Pętla for: i to licznik, działa dopóki i jest mniejsze od rozmiaru
+    for (int i = 0; i < rozmiar; i++) {
+        // Porównanie: czy wartość pod indeksem i to nasza szukana?
+        if (tablica[i] == szukana) {
+            return i; // Przerwanie funkcji i zwrot indeksu
+        }
+    }
+    return -1; // Zwrot -1, jeśli pętla sprawdziła wszystko i nic nie znalazła
+}
+
+int main() {
+    int liczby[] = {10, 22, 5, 18, 9, 30}; 
+    
+    // sizeof(tablica) - rozmiar w bajtach całej tablicy
+    // sizeof(tablica[0]) - rozmiar jednego elementu (int = 4 bajty)
+    // Dzielenie daje nam faktyczną liczbę elementów (6)
+    int n = sizeof(liczby) / sizeof(liczby[0]); 
+    
+    int szukanaWartosc = 18;
+
+    // Wywołanie funkcji z przekazaniem tablicy i jej rozmiaru
+    int wynik = wyszukajLiniowo(liczby, n, szukanaWartosc);
+
+    // cout - wypisanie danych do konsoli
+    if (wynik != -1) {
+        cout << "Znaleziono element pod indeksem: " << wynik << endl;
+    } else {
+        cout << "Nie znaleziono elementu w tablicy." << endl;
+    }
+    return 0;
+}
+
+```
+
+----------
+
+##  Wyszukiwanie liniowe z wartownikiem (C++)
+
+Wersja z **wartownikiem** jest optymalizacją, która usuwa sprawdzanie warunku końca tablicy (`i < n`) w każdej iteracji pętli.
+
+C++
+
+```cpp
+#include <iostream> 
+using namespace std;
+
+int wyszukajZWartownikiem(int tablica[], int n, int szukana) {
+    // Zabezpieczenie przed błędem dla pustej tablicy
+    if (n <= 0) return -1;
+
+    // 1. Zapamiętujemy ostatni element, by go nie stracić
+    int ostatni = tablica[n - 1];
+
+    // 2. Wstawiamy szukaną na koniec (to jest nasz wartownik)
+    tablica[n - 1] = szukana;
+
+    int i = 0;
+    // 3. Pętla while: szuka aż do napotkania szukanej wartości
+    // Dzięki wartownikowi pętla NIGDY nie wyjdzie poza pamięć tablicy
+    while (tablica[i] != szukana) {
+        i++;
+    }
+
+    // 4. Przywracamy oryginalną wartość na ostatnie miejsce
+    tablica[n - 1] = ostatni;
+
+    // 5. Sprawdzamy: czy i to indeks sprzed końca tablicy,
+    // LUB czy ostatni element był tym szukanym
+    if (i < n - 1 || ostatni == szukana) {
+        return i; // Znaleziono realny element
+    }
+
+    return -1; // Znaleziono tylko wartownika (brak elementu)
+}
+
+int main() {
+    int liczby[] = {10, 22, 5, 18, 9, 30};
+    int n = sizeof(liczby) / sizeof(liczby[0]);
+    int szukana = 18;
+
+    int wynik = wyszukajZWartownikiem(liczby, n, szukana);
+
+    if (wynik != -1) {
+        cout << "Znaleziono element pod indeksem: " << wynik << endl;
+    } else {
+        cout << "Nie znaleziono elementu." << endl;
+    }
+    return 0;
+}
+```
