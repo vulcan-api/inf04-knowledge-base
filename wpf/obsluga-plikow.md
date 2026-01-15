@@ -7,7 +7,7 @@ Powrót na start -> [Start](./root.md)
 ## OpenFileDialog
 Otwarcie dialogu, nazwa okienka, z którego wybiera się plik, filtrowanie rozszerzeń:
 ```cs
-OpenFileDialog dialog = new OpenFileDialog;
+var dialog = new Microsoft.Win32.OpenFileDialog();
 dialog.Title = "Wybierz plik tekstowy"; //nazwa (u góry po lewej, zwykle Eksplorator plików)
 dialog.Filter = "Pliki tekstowe (*.txt)|*.txt|Wszystkie pliki (*.*)|*.*"; //o filtrach niżej
 ```
@@ -21,7 +21,7 @@ if (dialog.showDialog() == true) {
 ## SaveFileDialog
 Zapisywanie pliku, podanie własnej zawartości, wybiór lokalizacji:
 ```cs
-SaveFileDialog dialogZapisu = new SaveFileDialog();
+var dialogZapisu = new Microsoft.Win32.SaveFileDialog();
 dialogZapisu.Title = "Zapisz plik";
 dialogZapisu.Filter = "Pliki tekstowe (*.txt)|*.txt";
 if (dialog.ShowDialog() == true) //otwarcie okienka wyboru pliku i OK
@@ -37,7 +37,7 @@ if (dialog.ShowDialog() == true) //otwarcie okienka wyboru pliku i OK
 ```cs
 private void OpenFileButton_Click(object sender, RoutedEventArgs e)
 {
-    OpenFileDialog dialog = new OpenFileDialog();
+    var dialog = new Microsoft.Win32.OpenFileDialog();
     dialog.Title = "Wybierz plik tekstowy";
     dialog.Filter = "Pliki tekstowe (*.txt)|*.txt|Wszystkie pliki (*.*)|*.*";
 
